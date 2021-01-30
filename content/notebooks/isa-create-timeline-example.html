@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Isa Create Mode &#8212; The ISA cookbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/mermaid.js"></script>
+    <script src="../../_static/mermaid.min.js"></script>
+    <script src="../../_static/mermaid.core.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <link rel="canonical" href="https://isa-tools.github.io/isa-cookbook/content/notebooks/isa-create-timeline-example.html" />
+    <link rel="shortcut icon" href="../../_static/isa.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://isa-tools.github.io/isa-cookbook/content/notebooks/isa-create-timeline-example.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Isa Create Mode" />
+<meta property="og:description" content="Isa Create Mode  from isatools.model import * from isatools.create.models import * from isatools.create.models import StudyCell Treatments  Here we will try to " />
+<meta property="og:image"       content="https://isa-tools.github.io/isa-cookbook/_static/isa_footer_logo.svg" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/isa_footer_logo.svg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The ISA cookbook</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="../index.html">1. ISA tools API</a>
+  </li>
+  <li class="">
+    <a href="../installation.html">2. ISA-API Installation</a>
+  </li>
+  <li class="">
+    <a href="../isamodel.html">3. ISA data model</a>
+  </li>
+  <li class="">
+    <a href="../reading.html">4. Reading in ISA-Tab or ISA JSON</a>
+  </li>
+  <li class="">
+    <a href="../creation.html">5. Creating ISA content</a>
+  </li>
+  <li class="">
+    <a href="../validation.html">6. Validating ISA-Tab and ISA JSON</a>
+  </li>
+  <li class="">
+    <a href="../conversions.html">7. Converting between ISA format</a>
+  </li>
+  <li class="">
+    <a href="../importdata.html">8. Importing data into ISA formats</a>
+  </li>
+  <li class="">
+    <a href="../exportdata.html">9. Exporting data from ISA formats</a>
+  </li>
+  <li class="">
+    <a href="../examples.html">10. Example programs using the ISA API</a>
+  </li>
+  <li class="">
+    <a href="../github.html">11. Downloading files stored in Github</a>
+  </li>
+  <li class="">
+    <a href="../knownissues.html">12. Known issues</a>
+  </li>
+  <li class="">
+    <a href="isa-create-sample-assay-plan-htp-imaging.html">13. ISA Create - Sample Assay Plan as a Graph: Phenotyping by HT imaging Spectrometry</a>
+  </li>
+  <li class="">
+    <a href="isa-create-sample-assay-plan-lc-dad.html">14. ISA Create - Sample Assay Plan as a Graph: LC-Diode-Array-Assay Spectrometry</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/notebooks/isa-create-timeline-example.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/isa-tools/isa-cookbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/isa-tools/isa-cookbook/issues/new?title=Issue%20on%20page%20%2Fcontent/notebooks/isa-create-timeline-example.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/isa-tools/isa-cookbook/edit/main/isa-book/content/notebooks/isa-create-timeline-example.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/isa-tools/isa-cookbook/main?urlpath=lab/tree/isa-book/content/notebooks/isa-create-timeline-example.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/isa-tools/isa-cookbook/blob/main/isa-book/content/notebooks/isa-create-timeline-example.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#" class="nav-link">Isa Create Mode</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#treatments" class="nav-link">Treatments</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#study-epochs" class="nav-link">Study Epochs:</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#study-design" class="nav-link">Study Design</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#study-design-factory" class="nav-link">Study Design Factory</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/isa-tools/isa-cookbook/edit/main/isa-book/content/notebooks/isa-create-timeline-example.ipynb">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="isa-create-mode">
+<h1>Isa Create Mode<a class="headerlink" href="#isa-create-mode" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">isatools.model</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">isatools.create.models</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">isatools.create.models</span> <span class="kn">import</span> <span class="n">StudyCell</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="treatments">
+<h1>Treatments<a class="headerlink" href="#treatments" title="Permalink to this headline">¶</a></h1>
+<p>Here we will try to create a few treatments:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NAME</span> <span class="o">=</span> <span class="s1">&#39;name&#39;</span>
+<span class="n">treatment_0_conf</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">TYPE</span><span class="o">=</span><span class="n">INTERVENTIONS</span><span class="p">[</span><span class="s1">&#39;CHEMICAL&#39;</span><span class="p">],</span> <span class="n">FACTORS_0_VALUE</span><span class="o">=</span><span class="s1">&#39;nitroglycerin&#39;</span><span class="p">,</span><span class="n">FACTORS_1_VALUE</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">FACTORS_1_UNIT</span><span class="o">=</span><span class="s1">&#39;kg/m^3&#39;</span><span class="p">,</span> 
+                            <span class="n">FACTORS_2_VALUE</span><span class="o">=</span><span class="mf">100.0</span><span class="p">,</span> <span class="n">FACTORS_2_UNIT</span> <span class="o">=</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="n">treatment_1_conf</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">TYPE</span><span class="o">=</span><span class="n">INTERVENTIONS</span><span class="p">[</span><span class="s1">&#39;CHEMICAL&#39;</span><span class="p">],</span> <span class="n">FACTORS_0_VALUE</span><span class="o">=</span><span class="s1">&#39;aether&#39;</span><span class="p">,</span><span class="n">FACTORS_1_VALUE</span><span class="o">=</span><span class="mf">1.25</span><span class="p">,</span> <span class="n">FACTORS_1_UNIT</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> 
+                            <span class="n">FACTORS_2_VALUE</span><span class="o">=</span><span class="mf">60000.0</span><span class="p">,</span> <span class="n">FACTORS_2_UNIT</span> <span class="o">=</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="n">treatment_2_conf</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">TYPE</span><span class="o">=</span><span class="n">INTERVENTIONS</span><span class="p">[</span><span class="s1">&#39;RADIOLOGICAL&#39;</span><span class="p">],</span> <span class="n">FACTORS_0_VALUE</span><span class="o">=</span><span class="s1">&#39;gamma ray&#39;</span><span class="p">,</span><span class="n">FACTORS_1_VALUE</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">FACTORS_1_UNIT</span><span class="o">=</span><span class="s1">&#39;gy&#39;</span><span class="p">,</span> 
+                            <span class="n">FACTORS_2_VALUE</span><span class="o">=</span><span class="mf">60000.0</span><span class="p">,</span> <span class="n">FACTORS_2_UNIT</span> <span class="o">=</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="n">treatment_3_conf</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">TYPE</span><span class="o">=</span><span class="n">INTERVENTIONS</span><span class="p">[</span><span class="s1">&#39;DIET&#39;</span><span class="p">],</span> <span class="n">FACTORS_0_VALUE</span><span class="o">=</span><span class="s1">&#39;glucose&#39;</span><span class="p">,</span><span class="n">FACTORS_1_VALUE</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">FACTORS_1_UNIT</span><span class="o">=</span><span class="s1">&#39;kg&#39;</span><span class="p">,</span> 
+                            <span class="n">FACTORS_2_VALUE</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">FACTORS_2_UNIT</span> <span class="o">=</span> <span class="s1">&#39;day&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">treatment_3_conf</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Treatment</span><span class="p">(</span><span class="n">treatment_3_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;TYPE&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Treatment</span><span class="p">(</span><span class="n">treatment_3_conf</span><span class="p">[</span><span class="s1">&#39;TYPE&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">treatment_type</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">treatment_3_conf</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">treatments</span> <span class="o">=</span> <span class="p">[</span><span class="n">Treatment</span><span class="p">(</span><span class="n">treatment_type</span><span class="o">=</span><span class="n">conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;TYPE&#39;</span><span class="p">,</span><span class="kc">None</span><span class="p">),</span> <span class="n">factor_values</span><span class="o">=</span><span class="p">(</span>
+    <span class="n">FactorValue</span><span class="p">(</span><span class="n">factor_name</span><span class="o">=</span><span class="n">StudyFactor</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">BASE_FACTORS_</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]),</span> <span class="n">value</span><span class="o">=</span><span class="n">conf</span><span class="p">[</span><span class="s1">&#39;FACTORS_0_VALUE&#39;</span><span class="p">]),</span>
+    <span class="n">FactorValue</span><span class="p">(</span><span class="n">factor_name</span><span class="o">=</span><span class="n">StudyFactor</span><span class="p">(</span><span class="n">BASE_FACTORS_</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]),</span> <span class="n">value</span><span class="o">=</span><span class="n">conf</span><span class="p">[</span><span class="s1">&#39;FACTORS_1_VALUE&#39;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="n">conf</span><span class="p">[</span><span class="s1">&#39;FACTORS_1_UNIT&#39;</span><span class="p">]),</span>
+    <span class="n">FactorValue</span><span class="p">(</span><span class="n">factor_name</span><span class="o">=</span><span class="n">StudyFactor</span><span class="p">(</span><span class="n">BASE_FACTORS_</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]),</span> <span class="n">value</span><span class="o">=</span><span class="n">conf</span><span class="p">[</span><span class="s1">&#39;FACTORS_2_VALUE&#39;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="n">conf</span><span class="p">[</span><span class="s1">&#39;FACTORS_2_UNIT&#39;</span><span class="p">])</span>
+<span class="p">))</span> <span class="k">for</span> <span class="n">conf</span> <span class="ow">in</span> <span class="p">[</span><span class="n">treatment_0_conf</span><span class="p">,</span> <span class="n">treatment_1_conf</span><span class="p">,</span> <span class="n">treatment_2_conf</span><span class="p">,</span> <span class="n">treatment_3_conf</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">treatments</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="study-epochs">
+<h2>Study Epochs:<a class="headerlink" href="#study-epochs" title="Permalink to this headline">¶</a></h2>
+<p>Here we will create three epochs. The central epoch will have two concomitant treatments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sample_plan</span> <span class="o">=</span> <span class="n">SampleAssayPlan</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sample_plan</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">epoch_0</span> <span class="o">=</span> <span class="n">StudyCell</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="n">treatments</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">epoch_1</span> <span class="o">=</span> <span class="n">StudyCell</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;second&#39;</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="p">(</span><span class="n">treatments</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">treatments</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+<span class="n">epoch_2</span> <span class="o">=</span> <span class="n">StudyCell</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;third&#39;</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="p">(</span><span class="n">treatments</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">treatments</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">epoch_0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">epoch_1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">epoch_2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="study-design">
+<h1>Study Design<a class="headerlink" href="#study-design" title="Permalink to this headline">¶</a></h1>
+<p>Here we compose a study design with the three study epochs</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">study_design</span> <span class="o">=</span>  <span class="n">StudyDesign</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="study-design-factory">
+<h1>Study Design Factory<a class="headerlink" href="#study-design-factory" title="Permalink to this headline">¶</a></h1>
+<p>Here we use a <code class="docutils literal notranslate"><span class="pre">StudyDesignFactory</span></code> class to generate study designs:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">factory</span> <span class="o">=</span> <span class="n">StudyDesignFactory</span><span class="p">(</span><span class="n">treatments</span><span class="p">,</span> <span class="n">sample_plan</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">factory</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">crossover_design</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">compute_crossover_design</span><span class="p">(</span><span class="n">screen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">follow_up</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">parallel_design</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">compute_parallel_design</span><span class="p">(</span><span class="n">screen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">follow_up</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">crossover_design</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">study_design</span> <span class="o">=</span> <span class="n">StudyDesign</span><span class="p">(</span><span class="n">crossover_design</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">study_design</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The ISA Team<br/>
+        
+            &copy; Copyright 2021 (CC-BY 4.0).<br/>
+          <div class="extra_footer">
+            <script>mermaid.init();</script> <div class="row_footer"> This page was created thanks to work by <a href="https://github.com/jupyter/jupyter-book/graphs/contributors">The Jupyter Book Community</a></div> <div class="row_footer"> This project is supported financially by the <a href="https://wellcome.org/">Welcome Trust</a>, Elixir-UK and the European Union</div>
+<div class="row_footer"> <div class="column" style="center"><a href="https://wellcome.org/"><img src="../_static/images/logo/wellcome-logo-black.png" height="25" alt="Wellcome" style="float:center""></a></div> <div class="column"><a href="https://www.elixir-uk.org.eu/"><img src="../_static/images/logo/elixir-uk_transparent.png" height="40" alt="IMI logo" style="float:center""></a></div> <div class="column"><a href="https://https://ec.europa.eu/programmes/horizon2020/en"><img src="../_static/images/logo/eu-flag-recolored.png" height="25" alt="EFPIA logo" style="float:center""></a></div> </div>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>

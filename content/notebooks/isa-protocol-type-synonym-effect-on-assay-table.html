@@ -1,0 +1,1015 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>&lt;no title&gt; &#8212; The ISA cookbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/mermaid.js"></script>
+    <script src="../../_static/mermaid.min.js"></script>
+    <script src="../../_static/mermaid.core.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <link rel="canonical" href="https://isa-tools.github.io/isa-cookbook/content/notebooks/isa-protocol-type-synonym-effect-on-assay-table.html" />
+    <link rel="shortcut icon" href="../../_static/isa.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="ISA Create - Sample Assay Plan as a Graph: LC-Diode-Array-Assay Spectrometry" href="isa-create-sample-assay-plan-lc-dad.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://isa-tools.github.io/isa-cookbook/content/notebooks/isa-protocol-type-synonym-effect-on-assay-table.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="<no title>" />
+<meta property="og:description" content="" />
+<meta property="og:image"       content="https://isa-tools.github.io/isa-cookbook/_static/isa_footer_logo.svg" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/isa_footer_logo.svg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The ISA cookbook</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="../index.html">1. ISA tools API</a>
+  </li>
+  <li class="">
+    <a href="../installation.html">2. ISA-API Installation</a>
+  </li>
+  <li class="">
+    <a href="../isamodel.html">3. ISA data model</a>
+  </li>
+  <li class="">
+    <a href="../reading.html">4. Reading in ISA-Tab or ISA JSON</a>
+  </li>
+  <li class="">
+    <a href="../creation.html">5. Creating ISA content</a>
+  </li>
+  <li class="">
+    <a href="../validation.html">6. Validating ISA-Tab and ISA JSON</a>
+  </li>
+  <li class="">
+    <a href="../conversions.html">7. Converting between ISA format</a>
+  </li>
+  <li class="">
+    <a href="../importdata.html">8. Importing data into ISA formats</a>
+  </li>
+  <li class="">
+    <a href="../exportdata.html">9. Exporting data from ISA formats</a>
+  </li>
+  <li class="">
+    <a href="../examples.html">10. Example programs using the ISA API</a>
+  </li>
+  <li class="">
+    <a href="../github.html">11. Downloading files stored in Github</a>
+  </li>
+  <li class="">
+    <a href="../knownissues.html">12. Known issues</a>
+  </li>
+  <li class="">
+    <a href="isa-create-sample-assay-plan-htp-imaging.html">13. ISA Create - Sample Assay Plan as a Graph: Phenotyping by HT imaging Spectrometry</a>
+  </li>
+  <li class="">
+    <a href="isa-create-sample-assay-plan-lc-dad.html">14. ISA Create - Sample Assay Plan as a Graph: LC-Diode-Array-Assay Spectrometry</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/notebooks/isa-protocol-type-synonym-effect-on-assay-table.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/isa-tools/isa-cookbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/isa-tools/isa-cookbook/issues/new?title=Issue%20on%20page%20%2Fcontent/notebooks/isa-protocol-type-synonym-effect-on-assay-table.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/isa-tools/isa-cookbook/edit/main/isa-book/content/notebooks/isa-protocol-type-synonym-effect-on-assay-table.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/isa-tools/isa-cookbook/main?urlpath=lab/tree/isa-book/content/notebooks/isa-protocol-type-synonym-effect-on-assay-table.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/isa-tools/isa-cookbook/blob/main/isa-book/content/notebooks/isa-protocol-type-synonym-effect-on-assay-table.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+    </ul>
+</nav>
+
+
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/isa-tools/isa-cookbook/edit/main/isa-book/content/notebooks/isa-protocol-type-synonym-effect-on-assay-table.ipynb">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">isatools</span>
+<span class="kn">from</span> <span class="nn">isatools</span> <span class="kn">import</span> <span class="n">isatab</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">isatools.model</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Investigation</span><span class="p">,</span>
+    <span class="n">Study</span><span class="p">,</span>
+    <span class="n">OntologySource</span><span class="p">,</span>
+    <span class="n">OntologyAnnotation</span><span class="p">,</span>
+    <span class="n">Person</span><span class="p">,</span>
+    <span class="n">Publication</span><span class="p">,</span>
+    <span class="n">Source</span><span class="p">,</span>
+    <span class="n">Sample</span><span class="p">,</span>
+    <span class="n">Characteristic</span><span class="p">,</span>
+    <span class="n">Protocol</span><span class="p">,</span>
+    <span class="n">Process</span><span class="p">,</span>
+    <span class="n">Assay</span><span class="p">,</span>
+    <span class="n">Material</span><span class="p">,</span>
+    <span class="n">DataFile</span><span class="p">,</span>
+    <span class="n">batch_create_materials</span><span class="p">,</span>
+    <span class="n">plink</span>
+<span class="p">)</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">isatools.isajson</span> <span class="kn">import</span> <span class="n">ISAJSONEncoder</span>
+<span class="kn">from</span> <span class="nn">isatools.isatab</span> <span class="kn">import</span> <span class="n">dump_tables_to_dataframes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an empty Investigation object and set some values to the instance variables.</span>
+
+<span class="n">investigation</span> <span class="o">=</span> <span class="n">Investigation</span><span class="p">()</span>
+<span class="c1"># investigation.identifier = &quot;i1&quot;</span>
+<span class="c1"># investigation.title = &quot;My Simple ISA Investigation&quot;</span>
+<span class="c1"># investigation.description = &quot;We could alternatively use the class constructor&#39;s parameters to set some default &quot; \</span>
+<span class="c1">#                             &quot;values at the time of creation, however we want to demonstrate how to use the &quot; \</span>
+<span class="c1">#                             &quot;object&#39;s instance variables to set values.&quot;</span>
+<span class="c1"># investigation.submission_date = &quot;2016-11-03&quot;</span>
+<span class="c1"># investigation.public_release_date = &quot;201611-03&quot;</span>
+
+<span class="c1"># Create an empty Study object and set some values. The Study must have a filename, otherwise when we serialize it</span>
+<span class="c1"># to ISA-Tab we would not know where to write it. We must also attach the study to the investigation by adding it</span>
+<span class="c1"># to the &#39;investigation&#39; object&#39;s list of studies.</span>
+
+<span class="n">study</span> <span class="o">=</span> <span class="n">Study</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;s_study.txt&quot;</span><span class="p">)</span>
+<span class="n">study</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="s2">&quot;s1&quot;</span>
+<span class="n">study</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;My ISA Study&quot;</span>
+<span class="n">study</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Like with the Investigation, we could use the class constructor to set some default values, &quot;</span> \
+                    <span class="s2">&quot;but have chosen to demonstrate in this example the use of instance variables to set initial &quot;</span> \
+                    <span class="s2">&quot;values.&quot;</span>
+<span class="n">study</span><span class="o">.</span><span class="n">submission_date</span> <span class="o">=</span> <span class="s2">&quot;2016-11-03&quot;</span>
+<span class="n">study</span><span class="o">.</span><span class="n">public_release_date</span> <span class="o">=</span> <span class="s2">&quot;2016-11-03&quot;</span>
+<span class="n">investigation</span><span class="o">.</span><span class="n">studies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">study</span><span class="p">)</span>
+
+<span class="c1"># Some instance variables are typed with different objects and lists of objects. For example, a Study can have a</span>
+<span class="c1"># list of design descriptors. A design descriptor is an Ontology Annotation describing the kind of study at hand.</span>
+<span class="c1"># Ontology Annotations should typically reference an Ontology Source. We demonstrate a mix of using the class</span>
+<span class="c1"># constructors and setting values with instance variables. Note that the OntologyAnnotation object</span>
+<span class="c1"># &#39;intervention_design&#39; links its &#39;term_source&#39; directly to the &#39;obi&#39; object instance. To ensure the OntologySource</span>
+<span class="c1"># is encapsulated in the descriptor, it is added to a list of &#39;ontology_source_references&#39; in the Investigation</span>
+<span class="c1"># object. The &#39;intervention_design&#39; object is then added to the list of &#39;design_descriptors&#39; held by the Study</span>
+<span class="c1"># object.</span>
+
+<span class="n">obi</span> <span class="o">=</span> <span class="n">OntologySource</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;OBI&#39;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Ontology for Biomedical Investigations&quot;</span><span class="p">)</span>
+<span class="n">investigation</span><span class="o">.</span><span class="n">ontology_source_references</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">obi</span><span class="p">)</span>
+<span class="n">intervention_design</span> <span class="o">=</span> <span class="n">OntologyAnnotation</span><span class="p">(</span><span class="n">term_source</span><span class="o">=</span><span class="n">obi</span><span class="p">)</span>
+<span class="n">intervention_design</span><span class="o">.</span><span class="n">term</span> <span class="o">=</span> <span class="s2">&quot;intervention design&quot;</span>
+<span class="n">intervention_design</span><span class="o">.</span><span class="n">term_accession</span> <span class="o">=</span> <span class="s2">&quot;http://purl.obolibrary.org/obo/OBI_0000115&quot;</span>
+<span class="n">study</span><span class="o">.</span><span class="n">design_descriptors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">intervention_design</span><span class="p">)</span>
+
+<span class="c1"># Other instance variables common to both Investigation and Study objects include &#39;contacts&#39; and &#39;publications&#39;,</span>
+<span class="c1"># each with lists of corresponding Person and Publication objects.</span>
+
+<span class="n">contact</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="n">last_name</span><span class="o">=</span><span class="s2">&quot;Robertson&quot;</span><span class="p">,</span> <span class="n">affiliation</span><span class="o">=</span><span class="s2">&quot;University of Life&quot;</span><span class="p">,</span> <span class="n">roles</span><span class="o">=</span><span class="p">[</span><span class="n">OntologyAnnotation</span><span class="p">(</span><span class="n">term</span><span class="o">=</span><span class="s1">&#39;submitter&#39;</span><span class="p">)])</span>
+<span class="n">study</span><span class="o">.</span><span class="n">contacts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">contact</span><span class="p">)</span>
+<span class="n">publication</span> <span class="o">=</span> <span class="n">Publication</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Experiments with Elephants&quot;</span><span class="p">,</span> <span class="n">author_list</span><span class="o">=</span><span class="s2">&quot;A. Robertson, B. Robertson&quot;</span><span class="p">)</span>
+<span class="n">publication</span><span class="o">.</span><span class="n">pubmed_id</span> <span class="o">=</span> <span class="s2">&quot;12345678&quot;</span>
+<span class="n">publication</span><span class="o">.</span><span class="n">doi</span> <span class="o">=</span> <span class="s2">&quot;10.1038/sdata.2016.18&quot;</span> <span class="c1">#https://doi.org/10.144534/rmh0000008&quot;</span>
+<span class="n">publication</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">OntologyAnnotation</span><span class="p">(</span><span class="n">term</span><span class="o">=</span><span class="s2">&quot;published&quot;</span><span class="p">)</span>
+<span class="n">study</span><span class="o">.</span><span class="n">publications</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">publication</span><span class="p">)</span>
+
+<span class="c1"># To create the study graph that corresponds to the contents of the study table file (the s_*.txt file), we need</span>
+<span class="c1"># to create a process sequence. To do this we use the Process class and attach it to the Study object&#39;s</span>
+<span class="c1"># &#39;process_sequence&#39; list instance variable. Each process must be linked with a Protocol object that is attached to</span>
+<span class="c1"># a Study object&#39;s &#39;protocols&#39; list instance variable. The sample collection Process object usually has as input</span>
+<span class="c1"># a Source material and as output a Sample material.</span>
+
+<span class="c1"># Here we create one Source material object and attach it to our study.</span>
+
+<span class="n">source</span> <span class="o">=</span> <span class="n">Source</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;source_material&#39;</span><span class="p">)</span>
+<span class="n">study</span><span class="o">.</span><span class="n">sources</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+
+<span class="c1"># Then we create three Sample objects, with organism as Homo Sapiens, and attach them to the study. We use the utility function</span>
+<span class="c1"># batch_create_material() to clone a prototype material object. The function automatiaclly appends</span>
+<span class="c1"># an index to the material name. In this case, three samples will be created, with the names</span>
+<span class="c1"># &#39;sample_material-0&#39;, &#39;sample_material-1&#39; and &#39;sample_material-2&#39;.</span>
+
+<span class="n">prototype_sample</span> <span class="o">=</span> <span class="n">Sample</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;sample_material&#39;</span><span class="p">,</span> <span class="n">derives_from</span><span class="o">=</span><span class="p">(</span><span class="n">source</span><span class="p">,))</span>
+<span class="n">ncbitaxon</span> <span class="o">=</span> <span class="n">OntologySource</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;NCBITaxon&#39;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;NCBI Taxonomy&quot;</span><span class="p">)</span>
+<span class="n">characteristic_organism</span> <span class="o">=</span> <span class="n">Characteristic</span><span class="p">(</span><span class="n">category</span><span class="o">=</span><span class="n">OntologyAnnotation</span><span class="p">(</span><span class="n">term</span><span class="o">=</span><span class="s2">&quot;Organism&quot;</span><span class="p">),</span>
+                                 <span class="n">value</span><span class="o">=</span><span class="n">OntologyAnnotation</span><span class="p">(</span><span class="n">term</span><span class="o">=</span><span class="s2">&quot;Homo Sapiens&quot;</span><span class="p">,</span> <span class="n">term_source</span><span class="o">=</span><span class="n">ncbitaxon</span><span class="p">,</span>
+                                                          <span class="n">term_accession</span><span class="o">=</span><span class="s2">&quot;http://purl.bioontology.org/ontology/NCBITAXON/9606&quot;</span><span class="p">))</span>
+<span class="n">prototype_sample</span><span class="o">.</span><span class="n">characteristics</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">characteristic_organism</span><span class="p">)</span>
+
+<span class="n">study</span><span class="o">.</span><span class="n">samples</span> <span class="o">=</span> <span class="n">batch_create_materials</span><span class="p">(</span><span class="n">prototype_sample</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># creates a batch of 3 samples</span>
+
+<span class="c1"># Now we create a single Protocol object that represents our sample collection protocol, and attach it to the</span>
+<span class="c1"># study object. Protocols must be declared before we describe Processes, as a processing event of some sort</span>
+<span class="c1"># must execute some defined protocol. In the case of the class model, Protocols should therefore be declared</span>
+<span class="c1"># before Processes in order for the Process to be linked to one.</span>
+
+<span class="n">sample_collection_protocol</span> <span class="o">=</span> <span class="n">Protocol</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;sample collection&quot;</span><span class="p">,</span>
+                                      <span class="n">protocol_type</span><span class="o">=</span><span class="n">OntologyAnnotation</span><span class="p">(</span><span class="n">term</span><span class="o">=</span><span class="s2">&quot;sample collection&quot;</span><span class="p">))</span>
+<span class="n">study</span><span class="o">.</span><span class="n">protocols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sample_collection_protocol</span><span class="p">)</span>
+<span class="n">sample_collection_process</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">executes_protocol</span><span class="o">=</span><span class="n">sample_collection_protocol</span><span class="p">)</span>
+
+<span class="c1"># Next, we link our materials to the Process. In this particular case, we are describing a sample collection</span>
+<span class="c1"># process that takes one source material, and produces three different samples.</span>
+<span class="c1">#</span>
+<span class="c1"># (source_material)-&gt;(sample collection)-&gt;[(sample_material-0), (sample_material-1), (sample_material-2)]</span>
+
+<span class="k">for</span> <span class="n">src</span> <span class="ow">in</span> <span class="n">study</span><span class="o">.</span><span class="n">sources</span><span class="p">:</span>
+    <span class="n">sample_collection_process</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">src</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">sam</span> <span class="ow">in</span> <span class="n">study</span><span class="o">.</span><span class="n">samples</span><span class="p">:</span>
+    <span class="n">sample_collection_process</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sam</span><span class="p">)</span>
+
+<span class="c1"># Finally, attach the finished Process object to the study process_sequence. This can be done many times to</span>
+<span class="c1"># describe multiple sample collection events.</span>
+
+<span class="n">study</span><span class="o">.</span><span class="n">process_sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sample_collection_process</span><span class="p">)</span>
+
+<span class="c1"># Next, we build n Assay object and attach two protocols, extraction and sequencing.</span>
+
+<span class="c1"># assay = Assay(filename=&quot;a_assay.txt&quot;)</span>
+<span class="c1"># extraction_protocol = Protocol(name=&#39;extraction&#39;, protocol_type=OntologyAnnotation(term=&quot;material extraction&quot;))</span>
+<span class="c1"># study.protocols.append(extraction_protocol)</span>
+<span class="c1"># sequencing_protocol = Protocol(name=&#39;sequencing&#39;, protocol_type=OntologyAnnotation(term=&quot;material sequencing&quot;))</span>
+<span class="c1"># study.protocols.append(sequencing_protocol)</span>
+
+<span class="c1"># # To build out assay graphs, we enumereate the samples from the study-level, and for each sample we create an</span>
+<span class="c1"># # extraction process and a sequencing process. The extraction process takes as input a sample material, and produces</span>
+<span class="c1"># # an extract material. The sequencing process takes the extract material and produces a data file. This will</span>
+<span class="c1"># # produce three graphs, from sample material through to data, as follows:</span>
+<span class="c1"># #</span>
+<span class="c1"># # (sample_material-0)-&gt;(extraction)-&gt;(extract-0)-&gt;(sequencing)-&gt;(sequenced-data-0)</span>
+<span class="c1"># # (sample_material-1)-&gt;(extraction)-&gt;(extract-1)-&gt;(sequencing)-&gt;(sequenced-data-1)</span>
+<span class="c1"># # (sample_material-2)-&gt;(extraction)-&gt;(extract-2)-&gt;(sequencing)-&gt;(sequenced-data-2)</span>
+<span class="c1"># #</span>
+<span class="c1"># # Note that the extraction processes and sequencing processes are distinctly separate instances, where the three</span>
+<span class="c1"># # graphs are NOT interconnected.</span>
+
+<span class="c1"># for i, sample in enumerate(study.samples):</span>
+
+<span class="c1">#     # create an extraction process that executes the extraction protocol</span>
+
+<span class="c1">#     extraction_process = Process(executes_protocol=extraction_protocol)</span>
+
+<span class="c1">#     # extraction process takes as input a sample, and produces an extract material as output</span>
+
+<span class="c1">#     extraction_process.inputs.append(sample)</span>
+<span class="c1">#     material = Material(name=&quot;extract-{}&quot;.format(i))</span>
+<span class="c1">#     material.type = &quot;Extract Name&quot;</span>
+<span class="c1">#     extraction_process.outputs.append(material)</span>
+
+<span class="c1">#     # create a sequencing process that executes the sequencing protocol</span>
+
+<span class="c1">#     sequencing_process = Process(executes_protocol=sequencing_protocol)</span>
+<span class="c1">#     sequencing_process.name = &quot;assay-name-{}&quot;.format(i)</span>
+<span class="c1">#     sequencing_process.inputs.append(extraction_process.outputs[0])</span>
+
+<span class="c1">#     # Sequencing process usually has an output data file</span>
+
+<span class="c1">#     datafile = DataFile(filename=&quot;sequenced-data-{}&quot;.format(i), label=&quot;Raw Data File&quot;)</span>
+<span class="c1">#     sequencing_process.outputs.append(datafile)</span>
+
+<span class="c1">#     # Ensure Processes are linked forward and backward. plink(from_process, to_process) is a function to set</span>
+<span class="c1">#     # these links for you. It is found in the isatools.model package</span>
+
+<span class="c1">#     plink(extraction_process, sequencing_process)</span>
+
+<span class="c1">#     # make sure the extract, data file, and the processes are attached to the assay</span>
+
+<span class="c1">#     assay.data_files.append(datafile)</span>
+<span class="c1">#     assay.samples.append(sample)</span>
+<span class="c1">#     assay.other_material.append(material)</span>
+<span class="c1">#     assay.process_sequence.append(extraction_process)</span>
+<span class="c1">#     assay.process_sequence.append(sequencing_process)</span>
+<span class="c1">#     assay.measurement_type = OntologyAnnotation(term=&quot;gene sequencing&quot;)</span>
+<span class="c1">#     assay.technology_type = OntologyAnnotation(term=&quot;nucleotide sequencing&quot;)</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Next, we build n Assay object and attach two protocols, extraction and sequencing.</span>
+
+<span class="n">assay_1</span> <span class="o">=</span> <span class="n">Assay</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;a_assay_1.txt&quot;</span><span class="p">)</span>
+<span class="n">extraction_protocol</span> <span class="o">=</span> <span class="n">Protocol</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;extraction&#39;</span><span class="p">,</span> <span class="n">protocol_type</span><span class="o">=</span><span class="n">OntologyAnnotation</span><span class="p">(</span><span class="n">term</span><span class="o">=</span><span class="s2">&quot;material extraction&quot;</span><span class="p">))</span>
+<span class="n">study</span><span class="o">.</span><span class="n">protocols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">extraction_protocol</span><span class="p">)</span>
+<span class="n">sequencing_protocol_1</span> <span class="o">=</span> <span class="n">Protocol</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;sequencing_1&#39;</span><span class="p">,</span> <span class="n">protocol_type</span><span class="o">=</span><span class="n">OntologyAnnotation</span><span class="p">(</span><span class="n">term</span><span class="o">=</span><span class="s2">&quot;nucleic acid sequencing&quot;</span><span class="p">))</span>
+<span class="n">study</span><span class="o">.</span><span class="n">protocols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sequencing_protocol_1</span><span class="p">)</span>
+
+<span class="c1"># To build out assay graphs, we enumereate the samples from the study-level, and for each sample we create an</span>
+<span class="c1"># extraction process and a sequencing process. The extraction process takes as input a sample material, and produces</span>
+<span class="c1"># an extract material. The sequencing process takes the extract material and produces a data file. This will</span>
+<span class="c1"># produce three graphs, from sample material through to data, as follows:</span>
+<span class="c1">#</span>
+<span class="c1"># (sample_material-0)-&gt;(extraction)-&gt;(extract-0)-&gt;(sequencing)-&gt;(sequenced-data-0)</span>
+<span class="c1"># (sample_material-1)-&gt;(extraction)-&gt;(extract-1)-&gt;(sequencing)-&gt;(sequenced-data-1)</span>
+<span class="c1"># (sample_material-2)-&gt;(extraction)-&gt;(extract-2)-&gt;(sequencing)-&gt;(sequenced-data-2)</span>
+<span class="c1">#</span>
+<span class="c1"># Note that the extraction processes and sequencing processes are distinctly separate instances, where the three</span>
+<span class="c1"># graphs are NOT interconnected.</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">sample</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">study</span><span class="o">.</span><span class="n">samples</span><span class="p">):</span>
+
+    <span class="c1"># create an extraction process that executes the extraction protocol</span>
+
+    <span class="n">extraction_process</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">executes_protocol</span><span class="o">=</span><span class="n">extraction_protocol</span><span class="p">)</span>
+
+    <span class="c1"># extraction process takes as input a sample, and produces an extract material as output</span>
+
+    <span class="n">extraction_process</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+    <span class="n">material</span> <span class="o">=</span> <span class="n">Material</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;extract-</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="n">material</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="s2">&quot;Extract Name&quot;</span>
+    <span class="n">extraction_process</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">material</span><span class="p">)</span>
+
+    <span class="c1"># create a sequencing process that executes the sequencing protocol</span>
+
+    <span class="n">sequencing_process</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">executes_protocol</span><span class="o">=</span><span class="n">sequencing_protocol_1</span><span class="p">)</span>
+    <span class="n">sequencing_process</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;assay-name-</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">sequencing_process</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">extraction_process</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="c1"># Sequencing process usually has an output data file</span>
+
+    <span class="n">datafile</span> <span class="o">=</span> <span class="n">DataFile</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;sequenced-data-</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Raw Data File&quot;</span><span class="p">)</span>
+    <span class="n">sequencing_process</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">datafile</span><span class="p">)</span>
+
+    <span class="c1"># Ensure Processes are linked forward and backward. plink(from_process, to_process) is a function to set</span>
+    <span class="c1"># these links for you. It is found in the isatools.model package</span>
+
+    <span class="n">plink</span><span class="p">(</span><span class="n">extraction_process</span><span class="p">,</span> <span class="n">sequencing_process</span><span class="p">)</span>
+
+    <span class="c1"># make sure the extract, data file, and the processes are attached to the assay</span>
+
+    <span class="n">assay_1</span><span class="o">.</span><span class="n">data_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">datafile</span><span class="p">)</span>
+    <span class="n">assay_1</span><span class="o">.</span><span class="n">samples</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+    <span class="n">assay_1</span><span class="o">.</span><span class="n">other_material</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">material</span><span class="p">)</span>
+    <span class="n">assay_1</span><span class="o">.</span><span class="n">process_sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">extraction_process</span><span class="p">)</span>
+    <span class="n">assay_1</span><span class="o">.</span><span class="n">process_sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sequencing_process</span><span class="p">)</span>
+    <span class="n">assay_1</span><span class="o">.</span><span class="n">measurement_type</span> <span class="o">=</span> <span class="n">OntologyAnnotation</span><span class="p">(</span><span class="n">term</span><span class="o">=</span><span class="s2">&quot;genome sequencing&quot;</span>
+    <span class="n">assay_1</span><span class="o">.</span><span class="n">technology_type</span> <span class="o">=</span> <span class="n">OntologyAnnotation</span><span class="p">(</span><span class="n">term</span><span class="o">=</span><span class="s2">&quot;nucleotide sequencing&quot;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Next, we build n Assay object and attach two protocols, extraction and sequencing.</span>
+
+<span class="n">assay_2</span> <span class="o">=</span> <span class="n">Assay</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;a_assay_2.txt&quot;</span><span class="p">)</span>
+<span class="n">extraction_protocol</span> <span class="o">=</span> <span class="n">Protocol</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;nucleic acid extraction&#39;</span><span class="p">,</span> <span class="n">protocol_type</span><span class="o">=</span><span class="n">OntologyAnnotation</span><span class="p">(</span><span class="n">term</span><span class="o">=</span><span class="s2">&quot;nucleic acid extraction&quot;</span><span class="p">))</span>
+<span class="n">study</span><span class="o">.</span><span class="n">protocols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">extraction_protocol</span><span class="p">)</span>
+<span class="n">sequencing_protocol</span> <span class="o">=</span> <span class="n">Protocol</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;sequencing_2&#39;</span><span class="p">,</span> <span class="n">protocol_type</span><span class="o">=</span><span class="n">OntologyAnnotation</span><span class="p">(</span><span class="n">term</span><span class="o">=</span><span class="s2">&quot;nucleic acid sequencing&quot;</span><span class="p">))</span>
+<span class="n">study</span><span class="o">.</span><span class="n">protocols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sequencing_protocol</span><span class="p">)</span>
+<span class="n">dt_protocol</span> <span class="o">=</span> <span class="n">Protocol</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;analysis&#39;</span><span class="p">,</span> <span class="n">protocol_type</span><span class="o">=</span><span class="n">OntologyAnnotation</span><span class="p">(</span><span class="n">term</span><span class="o">=</span><span class="s2">&quot;sequence analysis data transformation&quot;</span><span class="p">))</span>
+<span class="n">study</span><span class="o">.</span><span class="n">protocols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dt_protocol</span><span class="p">)</span>
+
+<span class="c1"># To build out assay graphs, we enumereate the samples from the study-level, and for each sample we create an</span>
+<span class="c1"># extraction process and a sequencing process. The extraction process takes as input a sample material, and produces</span>
+<span class="c1"># an extract material. The sequencing process takes the extract material and produces a data file. This will</span>
+<span class="c1"># produce three graphs, from sample material through to data, as follows:</span>
+<span class="c1">#</span>
+<span class="c1"># (sample_material-0)-&gt;(extraction)-&gt;(extract-0)-&gt;(sequencing)-&gt;(sequenced-data-0)</span>
+<span class="c1"># (sample_material-1)-&gt;(extraction)-&gt;(extract-1)-&gt;(sequencing)-&gt;(sequenced-data-1)</span>
+<span class="c1"># (sample_material-2)-&gt;(extraction)-&gt;(extract-2)-&gt;(sequencing)-&gt;(sequenced-data-2)</span>
+<span class="c1">#</span>
+<span class="c1"># Note that the extraction processes and sequencing processes are distinctly separate instances, where the three</span>
+<span class="c1"># graphs are NOT interconnected.</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">sample</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">study</span><span class="o">.</span><span class="n">samples</span><span class="p">):</span>
+
+    <span class="c1"># create an extraction process that executes the extraction protocol</span>
+
+    <span class="n">extraction_process</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">executes_protocol</span><span class="o">=</span><span class="n">extraction_protocol</span><span class="p">)</span>
+
+    <span class="c1"># extraction process takes as input a sample, and produces an extract material as output</span>
+
+    <span class="n">extraction_process</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+    <span class="n">material</span> <span class="o">=</span> <span class="n">Material</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;extract-</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="n">material</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="s2">&quot;Extract Name&quot;</span>
+    <span class="n">extraction_process</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">material</span><span class="p">)</span>
+
+    <span class="c1"># create a sequencing process that executes the sequencing protocol</span>
+
+    <span class="n">sequencing_process</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">executes_protocol</span><span class="o">=</span><span class="n">sequencing_protocol</span><span class="p">)</span>
+    <span class="n">sequencing_process</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;assay-name-</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">sequencing_process</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">extraction_process</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="c1"># Sequencing process usually has an output data file</span>
+
+    <span class="n">datafile</span> <span class="o">=</span> <span class="n">DataFile</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;sequenced-data-</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Raw Data File&quot;</span><span class="p">)</span>
+    <span class="n">sequencing_process</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">datafile</span><span class="p">)</span>
+    
+    <span class="c1"># Data Analysis process</span>
+    <span class="n">dt_process</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">executes_protocol</span><span class="o">=</span><span class="n">dt_protocol</span><span class="p">)</span>
+    <span class="n">dt_process</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;dt-name-</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">dt_process</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sequencing_process</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    
+    <span class="n">derived_file</span> <span class="o">=</span> <span class="n">DataFile</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;derived-data-</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Derived Data File&quot;</span><span class="p">)</span>
+    <span class="n">dt_process</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">derived_file</span><span class="p">)</span>
+    
+    <span class="c1"># Ensure Processes are linked forward and backward. plink(from_process, to_process) is a function to set</span>
+    <span class="c1"># these links for you. It is found in the isatools.model package</span>
+
+    <span class="n">plink</span><span class="p">(</span><span class="n">extraction_process</span><span class="p">,</span> <span class="n">sequencing_process</span><span class="p">)</span>
+    <span class="n">plink</span><span class="p">(</span><span class="n">sequencing_process</span><span class="p">,</span> <span class="n">dt_process</span><span class="p">)</span>
+
+    <span class="c1"># make sure the extract, data file, and the processes are attached to the assay</span>
+
+    <span class="n">assay_2</span><span class="o">.</span><span class="n">data_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">datafile</span><span class="p">)</span>
+    <span class="n">assay_2</span><span class="o">.</span><span class="n">samples</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+    <span class="n">assay_2</span><span class="o">.</span><span class="n">other_material</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">material</span><span class="p">)</span>
+    <span class="n">assay_2</span><span class="o">.</span><span class="n">process_sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">extraction_process</span><span class="p">)</span>
+    <span class="n">assay_2</span><span class="o">.</span><span class="n">process_sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sequencing_process</span><span class="p">)</span>
+    <span class="n">assay_2</span><span class="o">.</span><span class="n">process_sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dt_process</span><span class="p">)</span>
+    <span class="n">assay_2</span><span class="o">.</span><span class="n">measurement_type</span> <span class="o">=</span> <span class="n">OntologyAnnotation</span><span class="p">(</span><span class="n">term</span><span class="o">=</span><span class="s2">&quot;transcription profiling&quot;</span><span class="p">)</span>
+    <span class="n">assay_2</span><span class="o">.</span><span class="n">technology_type</span> <span class="o">=</span> <span class="n">OntologyAnnotation</span><span class="p">(</span><span class="n">term</span><span class="o">=</span><span class="s2">&quot;nucleotide sequencing&quot;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># attach the assays to the study</span>
+
+<span class="c1"># study.assays.append(assay)</span>
+<span class="n">study</span><span class="o">.</span><span class="n">assays</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">assay_1</span><span class="p">)</span>
+<span class="n">study</span><span class="o">.</span><span class="n">assays</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">assay_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dataframes</span> <span class="o">=</span> <span class="n">dump_tables_to_dataframes</span><span class="p">(</span><span class="n">investigation</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">2021-01-20 21:50:28,022 [INFO]: isatab.py(_all_end_to_end_paths:1152) &gt;&gt; Found 3 paths!
+2021-01-20 21:50:28,026 [INFO]: isatab.py(write_study_table_files:1330) &gt;&gt; Rendered 3 paths
+2021-01-20 21:50:28,029 [INFO]: isatab.py(write_study_table_files:1337) &gt;&gt; Writing 3 rows
+2021-01-20 21:50:28,043 [INFO]: isatab.py(_all_end_to_end_paths:1152) &gt;&gt; Found 3 paths!
+2021-01-20 21:50:28,065 [INFO]: isatab.py(_all_end_to_end_paths:1152) &gt;&gt; Found 3 paths!
+</pre>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">dataframes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;s_study.txt&#39;
+</pre></div>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;a_assay_2.txt&#39;
+</pre></div>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;a_assay_1.txt&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dataframes</span><span class="p">[</span><span class="s1">&#39;a_assay_2.txt&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sample Name</th>
+      <th>Protocol REF</th>
+      <th>Extract Name</th>
+      <th>Protocol REF.1</th>
+      <th>Assay Name</th>
+      <th>Raw Data File</th>
+      <th>Protocol REF.2</th>
+      <th>Normalization Name</th>
+      <th>Derived Data File</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>sample_material-0</td>
+      <td>nucleic acid extraction</td>
+      <td>extract-0</td>
+      <td>sequencing_2</td>
+      <td>assay-name-0</td>
+      <td>sequenced-data-0</td>
+      <td>analysis</td>
+      <td>dt-name-0</td>
+      <td>derived-data-0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>sample_material-1</td>
+      <td>nucleic acid extraction</td>
+      <td>extract-1</td>
+      <td>sequencing_2</td>
+      <td>assay-name-1</td>
+      <td>sequenced-data-1</td>
+      <td>analysis</td>
+      <td>dt-name-1</td>
+      <td>derived-data-1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>sample_material-2</td>
+      <td>nucleic acid extraction</td>
+      <td>extract-2</td>
+      <td>sequencing_2</td>
+      <td>assay-name-2</td>
+      <td>sequenced-data-2</td>
+      <td>analysis</td>
+      <td>dt-name-2</td>
+      <td>derived-data-2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># dataframes[&#39;a_assay_1.txt&#39;]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># dataframes[&#39;a_assay_2.txt&#39;]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># dataframe = dump_tables_to_dataframes(investigation)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># print(dataframe)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">isatab</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">investigation</span><span class="p">,</span><span class="s1">&#39;./notebook-output/&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">2021-01-20 21:50:28,235 [INFO]: isatab.py(_all_end_to_end_paths:1152) &gt;&gt; Found 3 paths!
+2021-01-20 21:50:28,238 [INFO]: isatab.py(write_study_table_files:1330) &gt;&gt; Rendered 3 paths
+2021-01-20 21:50:28,240 [INFO]: isatab.py(write_study_table_files:1337) &gt;&gt; Writing 3 rows
+2021-01-20 21:50:28,252 [INFO]: isatab.py(_all_end_to_end_paths:1152) &gt;&gt; Found 3 paths!
+2021-01-20 21:50:28,271 [INFO]: isatab.py(_all_end_to_end_paths:1152) &gt;&gt; Found 3 paths!
+</pre>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>isatools.model.Investigation(identifier=&#39;&#39;, filename=&#39;&#39;, title=&#39;&#39;, submission_date=&#39;&#39;, public_release_date=&#39;&#39;, ontology_source_references=[isatools.model.OntologySource(name=&#39;OBI&#39;, file=&#39;&#39;, version=&#39;&#39;, description=&#39;Ontology for Biomedical Investigations&#39;, comments=[])], publications=[], contacts=[], studies=[isatools.model.Study(filename=&#39;s_study.txt&#39;, identifier=&#39;s1&#39;, title=&#39;My ISA Study&#39;, description=&#39;Like with the Investigation, we could use the class constructor to set some default values, but have chosen to demonstrate in this example the use of instance variables to set initial values.&#39;, submission_date=&#39;2016-11-03&#39;, public_release_date=&#39;2016-11-03&#39;, contacts=[isatools.model.Person(last_name=&#39;Robertson&#39;, first_name=&#39;Alice&#39;, mid_initials=&#39;&#39;, email=&#39;&#39;, phone=&#39;&#39;, fax=&#39;&#39;, address=&#39;&#39;, affiliation=&#39;University of Life&#39;, roles=[isatools.model.OntologyAnnotation(term=&#39;submitter&#39;, term_source=None, term_accession=&#39;&#39;, comments=[])], comments=[])], design_descriptors=[isatools.model.OntologyAnnotation(term=&#39;intervention design&#39;, term_source=isatools.model.OntologySource(name=&#39;OBI&#39;, file=&#39;&#39;, version=&#39;&#39;, description=&#39;Ontology for Biomedical Investigations&#39;, comments=[]), term_accession=&#39;http://purl.obolibrary.org/obo/OBI_0000115&#39;, comments=[])], publications=[isatools.model.Publication(pubmed_id=&#39;12345678&#39;, doi=&#39;10.1038/sdata.2016.18&#39;, author_list=&#39;A. Robertson, B. Robertson&#39;, title=&#39;Experiments with Elephants&#39;, status=isatools.model.OntologyAnnotation(term=&#39;published&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), comments=[])], factors=[], protocols=[isatools.model.Protocol(name=&#39;sample collection&#39;, protocol_type=isatools.model.OntologyAnnotation(term=&#39;sample collection&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), uri=&#39;&#39;, version=&#39;&#39;, parameters=[], components=[], comments=[]), isatools.model.Protocol(name=&#39;extraction&#39;, protocol_type=isatools.model.OntologyAnnotation(term=&#39;material extraction&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), uri=&#39;&#39;, version=&#39;&#39;, parameters=[], components=[], comments=[]), isatools.model.Protocol(name=&#39;sequencing_1&#39;, protocol_type=isatools.model.OntologyAnnotation(term=&#39;nucleic acid sequencing&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), uri=&#39;&#39;, version=&#39;&#39;, parameters=[], components=[], comments=[]), isatools.model.Protocol(name=&#39;nucleic acid extraction&#39;, protocol_type=isatools.model.OntologyAnnotation(term=&#39;nucleic acid extraction&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), uri=&#39;&#39;, version=&#39;&#39;, parameters=[], components=[], comments=[]), isatools.model.Protocol(name=&#39;sequencing_2&#39;, protocol_type=isatools.model.OntologyAnnotation(term=&#39;nucleic acid sequencing&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), uri=&#39;&#39;, version=&#39;&#39;, parameters=[], components=[], comments=[]), isatools.model.Protocol(name=&#39;analysis&#39;, protocol_type=isatools.model.OntologyAnnotation(term=&#39;sequence analysis data transformation&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), uri=&#39;&#39;, version=&#39;&#39;, parameters=[], components=[], comments=[])], assays=[isatools.model.Assay(measurement_type=isatools.model.OntologyAnnotation(term=&#39;genome sequencing&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), technology_type=isatools.model.OntologyAnnotation(term=&#39;nucleotide sequencing&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), technology_platform=&#39;&#39;, filename=&#39;a_assay_1.txt&#39;, data_files=[isatools.model.DataFile(filename=&#39;sequenced-data-0&#39;, label=&#39;Raw Data File&#39;, generated_from=[], comments=[]), isatools.model.DataFile(filename=&#39;sequenced-data-1&#39;, label=&#39;Raw Data File&#39;, generated_from=[], comments=[]), isatools.model.DataFile(filename=&#39;sequenced-data-2&#39;, label=&#39;Raw Data File&#39;, generated_from=[], comments=[])], samples=[isatools.model.Sample(name=&#39;sample_material-0&#39;, characteristics=[isatools.model.Characteristic(category=isatools.model.OntologyAnnotation(term=&#39;Organism&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), value=isatools.model.OntologyAnnotation(term=&#39;Homo Sapiens&#39;, term_source=isatools.model.OntologySource(name=&#39;NCBITaxon&#39;, file=&#39;&#39;, version=&#39;&#39;, description=&#39;NCBI Taxonomy&#39;, comments=[]), term_accession=&#39;http://purl.bioontology.org/ontology/NCBITAXON/9606&#39;, comments=[]), unit=None, comments=[])], factor_values=[], derives_from=[isatools.model.Source(name=&#39;source_material&#39;, characteristics=[], comments=[])], comments=[]), isatools.model.Sample(name=&#39;sample_material-1&#39;, characteristics=[isatools.model.Characteristic(category=isatools.model.OntologyAnnotation(term=&#39;Organism&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), value=isatools.model.OntologyAnnotation(term=&#39;Homo Sapiens&#39;, term_source=isatools.model.OntologySource(name=&#39;NCBITaxon&#39;, file=&#39;&#39;, version=&#39;&#39;, description=&#39;NCBI Taxonomy&#39;, comments=[]), term_accession=&#39;http://purl.bioontology.org/ontology/NCBITAXON/9606&#39;, comments=[]), unit=None, comments=[])], factor_values=[], derives_from=[isatools.model.Source(name=&#39;source_material&#39;, characteristics=[], comments=[])], comments=[]), isatools.model.Sample(name=&#39;sample_material-2&#39;, characteristics=[isatools.model.Characteristic(category=isatools.model.OntologyAnnotation(term=&#39;Organism&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), value=isatools.model.OntologyAnnotation(term=&#39;Homo Sapiens&#39;, term_source=isatools.model.OntologySource(name=&#39;NCBITaxon&#39;, file=&#39;&#39;, version=&#39;&#39;, description=&#39;NCBI Taxonomy&#39;, comments=[]), term_accession=&#39;http://purl.bioontology.org/ontology/NCBITAXON/9606&#39;, comments=[]), unit=None, comments=[])], factor_values=[], derives_from=[isatools.model.Source(name=&#39;source_material&#39;, characteristics=[], comments=[])], comments=[])], process_sequence=[isatools.model.Process(id=&quot;&quot;. name=&quot;None&quot;, executes_protocol=Protocol(
+    name=extraction
+    protocol_type=material extraction
+    uri=
+    version=
+    parameters=0 ProtocolParameter objects
+    components=0 OntologyAnnotation objects
+    comments=0 Comment objects
+), date=&quot;None&quot;, performer=&quot;None&quot;, inputs=[isatools.model.Sample(name=&#39;sample_material-0&#39;, characteristics=[isatools.model.Characteristic(category=isatools.model.OntologyAnnotation(term=&#39;Organism&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), value=isatools.model.OntologyAnnotation(term=&#39;Homo Sapiens&#39;, term_source=isatools.model.OntologySource(name=&#39;NCBITaxon&#39;, file=&#39;&#39;, version=&#39;&#39;, description=&#39;NCBI Taxonomy&#39;, comments=[]), term_accession=&#39;http://purl.bioontology.org/ontology/NCBITAXON/9606&#39;, comments=[]), unit=None, comments=[])], factor_values=[], derives_from=[isatools.model.Source(name=&#39;source_material&#39;, characteristics=[], comments=[])], comments=[])], outputs=[&lt;isatools.model.Material object at 0x126e0c0a0&gt;]), isatools.model.Process(id=&quot;&quot;. name=&quot;assay-name-0&quot;, executes_protocol=Protocol(
+    name=sequencing_1
+    protocol_type=nucleic acid sequencing
+    uri=
+    version=
+    parameters=0 ProtocolParameter objects
+    components=0 OntologyAnnotation objects
+    comments=0 Comment objects
+), date=&quot;None&quot;, performer=&quot;None&quot;, inputs=[&lt;isatools.model.Material object at 0x126e0c0a0&gt;], outputs=[isatools.model.DataFile(filename=&#39;sequenced-data-0&#39;, label=&#39;Raw Data File&#39;, generated_from=[], comments=[])]), isatools.model.Process(id=&quot;&quot;. name=&quot;None&quot;, executes_protocol=Protocol(
+    name=extraction
+    protocol_type=material extraction
+    uri=
+    version=
+    parameters=0 ProtocolParameter objects
+    components=0 OntologyAnnotation objects
+    comments=0 Comment objects
+), date=&quot;None&quot;, performer=&quot;None&quot;, inputs=[isatools.model.Sample(name=&#39;sample_material-1&#39;, characteristics=[isatools.model.Characteristic(category=isatools.model.OntologyAnnotation(term=&#39;Organism&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), value=isatools.model.OntologyAnnotation(term=&#39;Homo Sapiens&#39;, term_source=isatools.model.OntologySource(name=&#39;NCBITaxon&#39;, file=&#39;&#39;, version=&#39;&#39;, description=&#39;NCBI Taxonomy&#39;, comments=[]), term_accession=&#39;http://purl.bioontology.org/ontology/NCBITAXON/9606&#39;, comments=[]), unit=None, comments=[])], factor_values=[], derives_from=[isatools.model.Source(name=&#39;source_material&#39;, characteristics=[], comments=[])], comments=[])], outputs=[&lt;isatools.model.Material object at 0x1270b7e80&gt;]), isatools.model.Process(id=&quot;&quot;. name=&quot;assay-name-1&quot;, executes_protocol=Protocol(
+    name=sequencing_1
+    protocol_type=nucleic acid sequencing
+    uri=
+    version=
+    parameters=0 ProtocolParameter objects
+    components=0 OntologyAnnotation objects
+    comments=0 Comment objects
+), date=&quot;None&quot;, performer=&quot;None&quot;, inputs=[&lt;isatools.model.Material object at 0x1270b7e80&gt;], outputs=[isatools.model.DataFile(filename=&#39;sequenced-data-1&#39;, label=&#39;Raw Data File&#39;, generated_from=[], comments=[])]), isatools.model.Process(id=&quot;&quot;. name=&quot;None&quot;, executes_protocol=Protocol(
+    name=extraction
+    protocol_type=material extraction
+    uri=
+    version=
+    parameters=0 ProtocolParameter objects
+    components=0 OntologyAnnotation objects
+    comments=0 Comment objects
+), date=&quot;None&quot;, performer=&quot;None&quot;, inputs=[isatools.model.Sample(name=&#39;sample_material-2&#39;, characteristics=[isatools.model.Characteristic(category=isatools.model.OntologyAnnotation(term=&#39;Organism&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), value=isatools.model.OntologyAnnotation(term=&#39;Homo Sapiens&#39;, term_source=isatools.model.OntologySource(name=&#39;NCBITaxon&#39;, file=&#39;&#39;, version=&#39;&#39;, description=&#39;NCBI Taxonomy&#39;, comments=[]), term_accession=&#39;http://purl.bioontology.org/ontology/NCBITAXON/9606&#39;, comments=[]), unit=None, comments=[])], factor_values=[], derives_from=[isatools.model.Source(name=&#39;source_material&#39;, characteristics=[], comments=[])], comments=[])], outputs=[&lt;isatools.model.Material object at 0x1270b7d60&gt;]), isatools.model.Process(id=&quot;&quot;. name=&quot;assay-name-2&quot;, executes_protocol=Protocol(
+    name=sequencing_1
+    protocol_type=nucleic acid sequencing
+    uri=
+    version=
+    parameters=0 ProtocolParameter objects
+    components=0 OntologyAnnotation objects
+    comments=0 Comment objects
+), date=&quot;None&quot;, performer=&quot;None&quot;, inputs=[&lt;isatools.model.Material object at 0x1270b7d60&gt;], outputs=[isatools.model.DataFile(filename=&#39;sequenced-data-2&#39;, label=&#39;Raw Data File&#39;, generated_from=[], comments=[])])], other_material=[&lt;isatools.model.Material object at 0x126e0c0a0&gt;, &lt;isatools.model.Material object at 0x1270b7e80&gt;, &lt;isatools.model.Material object at 0x1270b7d60&gt;], characteristic_categories=[], comments=[], units=[]), isatools.model.Assay(measurement_type=isatools.model.OntologyAnnotation(term=&#39;transcription profiling&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), technology_type=isatools.model.OntologyAnnotation(term=&#39;nucleotide sequencing&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), technology_platform=&#39;&#39;, filename=&#39;a_assay_2.txt&#39;, data_files=[isatools.model.DataFile(filename=&#39;sequenced-data-0&#39;, label=&#39;Raw Data File&#39;, generated_from=[], comments=[]), isatools.model.DataFile(filename=&#39;sequenced-data-1&#39;, label=&#39;Raw Data File&#39;, generated_from=[], comments=[]), isatools.model.DataFile(filename=&#39;sequenced-data-2&#39;, label=&#39;Raw Data File&#39;, generated_from=[], comments=[])], samples=[isatools.model.Sample(name=&#39;sample_material-0&#39;, characteristics=[isatools.model.Characteristic(category=isatools.model.OntologyAnnotation(term=&#39;Organism&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), value=isatools.model.OntologyAnnotation(term=&#39;Homo Sapiens&#39;, term_source=isatools.model.OntologySource(name=&#39;NCBITaxon&#39;, file=&#39;&#39;, version=&#39;&#39;, description=&#39;NCBI Taxonomy&#39;, comments=[]), term_accession=&#39;http://purl.bioontology.org/ontology/NCBITAXON/9606&#39;, comments=[]), unit=None, comments=[])], factor_values=[], derives_from=[isatools.model.Source(name=&#39;source_material&#39;, characteristics=[], comments=[])], comments=[]), isatools.model.Sample(name=&#39;sample_material-1&#39;, characteristics=[isatools.model.Characteristic(category=isatools.model.OntologyAnnotation(term=&#39;Organism&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), value=isatools.model.OntologyAnnotation(term=&#39;Homo Sapiens&#39;, term_source=isatools.model.OntologySource(name=&#39;NCBITaxon&#39;, file=&#39;&#39;, version=&#39;&#39;, description=&#39;NCBI Taxonomy&#39;, comments=[]), term_accession=&#39;http://purl.bioontology.org/ontology/NCBITAXON/9606&#39;, comments=[]), unit=None, comments=[])], factor_values=[], derives_from=[isatools.model.Source(name=&#39;source_material&#39;, characteristics=[], comments=[])], comments=[]), isatools.model.Sample(name=&#39;sample_material-2&#39;, characteristics=[isatools.model.Characteristic(category=isatools.model.OntologyAnnotation(term=&#39;Organism&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), value=isatools.model.OntologyAnnotation(term=&#39;Homo Sapiens&#39;, term_source=isatools.model.OntologySource(name=&#39;NCBITaxon&#39;, file=&#39;&#39;, version=&#39;&#39;, description=&#39;NCBI Taxonomy&#39;, comments=[]), term_accession=&#39;http://purl.bioontology.org/ontology/NCBITAXON/9606&#39;, comments=[]), unit=None, comments=[])], factor_values=[], derives_from=[isatools.model.Source(name=&#39;source_material&#39;, characteristics=[], comments=[])], comments=[])], process_sequence=[isatools.model.Process(id=&quot;&quot;. name=&quot;None&quot;, executes_protocol=Protocol(
+    name=nucleic acid extraction
+    protocol_type=nucleic acid extraction
+    uri=
+    version=
+    parameters=0 ProtocolParameter objects
+    components=0 OntologyAnnotation objects
+    comments=0 Comment objects
+), date=&quot;None&quot;, performer=&quot;None&quot;, inputs=[isatools.model.Sample(name=&#39;sample_material-0&#39;, characteristics=[isatools.model.Characteristic(category=isatools.model.OntologyAnnotation(term=&#39;Organism&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), value=isatools.model.OntologyAnnotation(term=&#39;Homo Sapiens&#39;, term_source=isatools.model.OntologySource(name=&#39;NCBITaxon&#39;, file=&#39;&#39;, version=&#39;&#39;, description=&#39;NCBI Taxonomy&#39;, comments=[]), term_accession=&#39;http://purl.bioontology.org/ontology/NCBITAXON/9606&#39;, comments=[]), unit=None, comments=[])], factor_values=[], derives_from=[isatools.model.Source(name=&#39;source_material&#39;, characteristics=[], comments=[])], comments=[])], outputs=[&lt;isatools.model.Material object at 0x12706fb50&gt;]), isatools.model.Process(id=&quot;&quot;. name=&quot;assay-name-0&quot;, executes_protocol=Protocol(
+    name=sequencing_2
+    protocol_type=nucleic acid sequencing
+    uri=
+    version=
+    parameters=0 ProtocolParameter objects
+    components=0 OntologyAnnotation objects
+    comments=0 Comment objects
+), date=&quot;None&quot;, performer=&quot;None&quot;, inputs=[&lt;isatools.model.Material object at 0x12706fb50&gt;], outputs=[isatools.model.DataFile(filename=&#39;sequenced-data-0&#39;, label=&#39;Raw Data File&#39;, generated_from=[], comments=[])]), isatools.model.Process(id=&quot;&quot;. name=&quot;dt-name-0&quot;, executes_protocol=Protocol(
+    name=analysis
+    protocol_type=sequence analysis data transformation
+    uri=
+    version=
+    parameters=0 ProtocolParameter objects
+    components=0 OntologyAnnotation objects
+    comments=0 Comment objects
+), date=&quot;None&quot;, performer=&quot;None&quot;, inputs=[isatools.model.DataFile(filename=&#39;sequenced-data-0&#39;, label=&#39;Raw Data File&#39;, generated_from=[], comments=[])], outputs=[isatools.model.DataFile(filename=&#39;derived-data-0&#39;, label=&#39;Derived Data File&#39;, generated_from=[], comments=[])]), isatools.model.Process(id=&quot;&quot;. name=&quot;None&quot;, executes_protocol=Protocol(
+    name=nucleic acid extraction
+    protocol_type=nucleic acid extraction
+    uri=
+    version=
+    parameters=0 ProtocolParameter objects
+    components=0 OntologyAnnotation objects
+    comments=0 Comment objects
+), date=&quot;None&quot;, performer=&quot;None&quot;, inputs=[isatools.model.Sample(name=&#39;sample_material-1&#39;, characteristics=[isatools.model.Characteristic(category=isatools.model.OntologyAnnotation(term=&#39;Organism&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), value=isatools.model.OntologyAnnotation(term=&#39;Homo Sapiens&#39;, term_source=isatools.model.OntologySource(name=&#39;NCBITaxon&#39;, file=&#39;&#39;, version=&#39;&#39;, description=&#39;NCBI Taxonomy&#39;, comments=[]), term_accession=&#39;http://purl.bioontology.org/ontology/NCBITAXON/9606&#39;, comments=[]), unit=None, comments=[])], factor_values=[], derives_from=[isatools.model.Source(name=&#39;source_material&#39;, characteristics=[], comments=[])], comments=[])], outputs=[&lt;isatools.model.Material object at 0x12706ff10&gt;]), isatools.model.Process(id=&quot;&quot;. name=&quot;assay-name-1&quot;, executes_protocol=Protocol(
+    name=sequencing_2
+    protocol_type=nucleic acid sequencing
+    uri=
+    version=
+    parameters=0 ProtocolParameter objects
+    components=0 OntologyAnnotation objects
+    comments=0 Comment objects
+), date=&quot;None&quot;, performer=&quot;None&quot;, inputs=[&lt;isatools.model.Material object at 0x12706ff10&gt;], outputs=[isatools.model.DataFile(filename=&#39;sequenced-data-1&#39;, label=&#39;Raw Data File&#39;, generated_from=[], comments=[])]), isatools.model.Process(id=&quot;&quot;. name=&quot;dt-name-1&quot;, executes_protocol=Protocol(
+    name=analysis
+    protocol_type=sequence analysis data transformation
+    uri=
+    version=
+    parameters=0 ProtocolParameter objects
+    components=0 OntologyAnnotation objects
+    comments=0 Comment objects
+), date=&quot;None&quot;, performer=&quot;None&quot;, inputs=[isatools.model.DataFile(filename=&#39;sequenced-data-1&#39;, label=&#39;Raw Data File&#39;, generated_from=[], comments=[])], outputs=[isatools.model.DataFile(filename=&#39;derived-data-1&#39;, label=&#39;Derived Data File&#39;, generated_from=[], comments=[])]), isatools.model.Process(id=&quot;&quot;. name=&quot;None&quot;, executes_protocol=Protocol(
+    name=nucleic acid extraction
+    protocol_type=nucleic acid extraction
+    uri=
+    version=
+    parameters=0 ProtocolParameter objects
+    components=0 OntologyAnnotation objects
+    comments=0 Comment objects
+), date=&quot;None&quot;, performer=&quot;None&quot;, inputs=[isatools.model.Sample(name=&#39;sample_material-2&#39;, characteristics=[isatools.model.Characteristic(category=isatools.model.OntologyAnnotation(term=&#39;Organism&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), value=isatools.model.OntologyAnnotation(term=&#39;Homo Sapiens&#39;, term_source=isatools.model.OntologySource(name=&#39;NCBITaxon&#39;, file=&#39;&#39;, version=&#39;&#39;, description=&#39;NCBI Taxonomy&#39;, comments=[]), term_accession=&#39;http://purl.bioontology.org/ontology/NCBITAXON/9606&#39;, comments=[]), unit=None, comments=[])], factor_values=[], derives_from=[isatools.model.Source(name=&#39;source_material&#39;, characteristics=[], comments=[])], comments=[])], outputs=[&lt;isatools.model.Material object at 0x1270d9730&gt;]), isatools.model.Process(id=&quot;&quot;. name=&quot;assay-name-2&quot;, executes_protocol=Protocol(
+    name=sequencing_2
+    protocol_type=nucleic acid sequencing
+    uri=
+    version=
+    parameters=0 ProtocolParameter objects
+    components=0 OntologyAnnotation objects
+    comments=0 Comment objects
+), date=&quot;None&quot;, performer=&quot;None&quot;, inputs=[&lt;isatools.model.Material object at 0x1270d9730&gt;], outputs=[isatools.model.DataFile(filename=&#39;sequenced-data-2&#39;, label=&#39;Raw Data File&#39;, generated_from=[], comments=[])]), isatools.model.Process(id=&quot;&quot;. name=&quot;dt-name-2&quot;, executes_protocol=Protocol(
+    name=analysis
+    protocol_type=sequence analysis data transformation
+    uri=
+    version=
+    parameters=0 ProtocolParameter objects
+    components=0 OntologyAnnotation objects
+    comments=0 Comment objects
+), date=&quot;None&quot;, performer=&quot;None&quot;, inputs=[isatools.model.DataFile(filename=&#39;sequenced-data-2&#39;, label=&#39;Raw Data File&#39;, generated_from=[], comments=[])], outputs=[isatools.model.DataFile(filename=&#39;derived-data-2&#39;, label=&#39;Derived Data File&#39;, generated_from=[], comments=[])])], other_material=[&lt;isatools.model.Material object at 0x12706fb50&gt;, &lt;isatools.model.Material object at 0x12706ff10&gt;, &lt;isatools.model.Material object at 0x1270d9730&gt;], characteristic_categories=[], comments=[], units=[])], sources=[isatools.model.Source(name=&#39;source_material&#39;, characteristics=[], comments=[])], samples=[isatools.model.Sample(name=&#39;sample_material-0&#39;, characteristics=[isatools.model.Characteristic(category=isatools.model.OntologyAnnotation(term=&#39;Organism&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), value=isatools.model.OntologyAnnotation(term=&#39;Homo Sapiens&#39;, term_source=isatools.model.OntologySource(name=&#39;NCBITaxon&#39;, file=&#39;&#39;, version=&#39;&#39;, description=&#39;NCBI Taxonomy&#39;, comments=[]), term_accession=&#39;http://purl.bioontology.org/ontology/NCBITAXON/9606&#39;, comments=[]), unit=None, comments=[])], factor_values=[], derives_from=[isatools.model.Source(name=&#39;source_material&#39;, characteristics=[], comments=[])], comments=[]), isatools.model.Sample(name=&#39;sample_material-1&#39;, characteristics=[isatools.model.Characteristic(category=isatools.model.OntologyAnnotation(term=&#39;Organism&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), value=isatools.model.OntologyAnnotation(term=&#39;Homo Sapiens&#39;, term_source=isatools.model.OntologySource(name=&#39;NCBITaxon&#39;, file=&#39;&#39;, version=&#39;&#39;, description=&#39;NCBI Taxonomy&#39;, comments=[]), term_accession=&#39;http://purl.bioontology.org/ontology/NCBITAXON/9606&#39;, comments=[]), unit=None, comments=[])], factor_values=[], derives_from=[isatools.model.Source(name=&#39;source_material&#39;, characteristics=[], comments=[])], comments=[]), isatools.model.Sample(name=&#39;sample_material-2&#39;, characteristics=[isatools.model.Characteristic(category=isatools.model.OntologyAnnotation(term=&#39;Organism&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), value=isatools.model.OntologyAnnotation(term=&#39;Homo Sapiens&#39;, term_source=isatools.model.OntologySource(name=&#39;NCBITaxon&#39;, file=&#39;&#39;, version=&#39;&#39;, description=&#39;NCBI Taxonomy&#39;, comments=[]), term_accession=&#39;http://purl.bioontology.org/ontology/NCBITAXON/9606&#39;, comments=[]), unit=None, comments=[])], factor_values=[], derives_from=[isatools.model.Source(name=&#39;source_material&#39;, characteristics=[], comments=[])], comments=[])], process_sequence=[isatools.model.Process(id=&quot;&quot;. name=&quot;None&quot;, executes_protocol=Protocol(
+    name=sample collection
+    protocol_type=sample collection
+    uri=
+    version=
+    parameters=0 ProtocolParameter objects
+    components=0 OntologyAnnotation objects
+    comments=0 Comment objects
+), date=&quot;None&quot;, performer=&quot;None&quot;, inputs=[isatools.model.Source(name=&#39;source_material&#39;, characteristics=[], comments=[])], outputs=[isatools.model.Sample(name=&#39;sample_material-0&#39;, characteristics=[isatools.model.Characteristic(category=isatools.model.OntologyAnnotation(term=&#39;Organism&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), value=isatools.model.OntologyAnnotation(term=&#39;Homo Sapiens&#39;, term_source=isatools.model.OntologySource(name=&#39;NCBITaxon&#39;, file=&#39;&#39;, version=&#39;&#39;, description=&#39;NCBI Taxonomy&#39;, comments=[]), term_accession=&#39;http://purl.bioontology.org/ontology/NCBITAXON/9606&#39;, comments=[]), unit=None, comments=[])], factor_values=[], derives_from=[isatools.model.Source(name=&#39;source_material&#39;, characteristics=[], comments=[])], comments=[]), isatools.model.Sample(name=&#39;sample_material-1&#39;, characteristics=[isatools.model.Characteristic(category=isatools.model.OntologyAnnotation(term=&#39;Organism&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), value=isatools.model.OntologyAnnotation(term=&#39;Homo Sapiens&#39;, term_source=isatools.model.OntologySource(name=&#39;NCBITaxon&#39;, file=&#39;&#39;, version=&#39;&#39;, description=&#39;NCBI Taxonomy&#39;, comments=[]), term_accession=&#39;http://purl.bioontology.org/ontology/NCBITAXON/9606&#39;, comments=[]), unit=None, comments=[])], factor_values=[], derives_from=[isatools.model.Source(name=&#39;source_material&#39;, characteristics=[], comments=[])], comments=[]), isatools.model.Sample(name=&#39;sample_material-2&#39;, characteristics=[isatools.model.Characteristic(category=isatools.model.OntologyAnnotation(term=&#39;Organism&#39;, term_source=None, term_accession=&#39;&#39;, comments=[]), value=isatools.model.OntologyAnnotation(term=&#39;Homo Sapiens&#39;, term_source=isatools.model.OntologySource(name=&#39;NCBITaxon&#39;, file=&#39;&#39;, version=&#39;&#39;, description=&#39;NCBI Taxonomy&#39;, comments=[]), term_accession=&#39;http://purl.bioontology.org/ontology/NCBITAXON/9606&#39;, comments=[]), unit=None, comments=[])], factor_values=[], derives_from=[isatools.model.Source(name=&#39;source_material&#39;, characteristics=[], comments=[])], comments=[])])], other_material=[], characteristic_categories=[], comments=[], units=[])], comments=[])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_json_report</span> <span class="o">=</span> <span class="n">isatab</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;./notebook-output/&#39;</span><span class="p">,</span> <span class="s1">&#39;i_investigation.txt&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">2021-01-20 21:50:28,293 [INFO]: isatab.py(validate:4202) &gt;&gt; Loading... ./notebook-output/i_investigation.txt
+2021-01-20 21:50:28,420 [INFO]: isatab.py(validate:4204) &gt;&gt; Running prechecks...
+2021-01-20 21:50:28,475 [WARNING]: isatab.py(check_doi:2172) &gt;&gt; (W) DOI 10.1038/sdata.2016.18 does not conform to DOI format
+2021-01-20 21:50:28,476 [INFO]: isatab.py(validate:4225) &gt;&gt; Finished prechecks...
+2021-01-20 21:50:28,476 [INFO]: isatab.py(validate:4226) &gt;&gt; Loading configurations found in /Users/philippe/Documents/git/isa-api2/isa-api/isatools/resources/config/xml
+2021-01-20 21:50:28,502 [INFO]: isatab.py(validate:4231) &gt;&gt; Using configurations found in /Users/philippe/Documents/git/isa-api2/isa-api/isatools/resources/config/xml
+2021-01-20 21:50:28,503 [INFO]: isatab.py(validate:4233) &gt;&gt; Checking investigation file against configuration...
+2021-01-20 21:50:28,506 [INFO]: isatab.py(validate:4236) &gt;&gt; Finished checking investigation file
+2021-01-20 21:50:28,507 [INFO]: isatab.py(validate:4255) &gt;&gt; Loading... s_study.txt
+2021-01-20 21:50:28,510 [INFO]: isatab.py(validate:4261) &gt;&gt; Validating s_study.txt against default study table configuration
+2021-01-20 21:50:28,511 [INFO]: isatab.py(validate:4263) &gt;&gt; Checking Factor Value presence...
+2021-01-20 21:50:28,512 [INFO]: isatab.py(validate:4266) &gt;&gt; Checking required fields...
+2021-01-20 21:50:28,512 [INFO]: isatab.py(validate:4269) &gt;&gt; Checking generic fields...
+2021-01-20 21:50:28,513 [INFO]: isatab.py(validate:4277) &gt;&gt; Checking unit fields...
+2021-01-20 21:50:28,514 [INFO]: isatab.py(validate:4284) &gt;&gt; Checking protocol fields...
+2021-01-20 21:50:28,515 [INFO]: isatab.py(validate:4294) &gt;&gt; Checking ontology fields...
+2021-01-20 21:50:28,516 [INFO]: isatab.py(validate:4304) &gt;&gt; Checking study group size...
+2021-01-20 21:50:28,516 [INFO]: isatab.py(validate:4308) &gt;&gt; Finished validation on s_study.txt
+2021-01-20 21:50:28,517 [INFO]: isatab.py(validate:4345) &gt;&gt; Loading... a_assay_1.txt
+2021-01-20 21:50:28,520 [INFO]: isatab.py(validate:4353) &gt;&gt; Validating a_assay_1.txt against assay table configuration (genome sequencing, nucleotide sequencing)...
+2021-01-20 21:50:28,521 [INFO]: isatab.py(validate:4359) &gt;&gt; Checking Factor Value presence...
+2021-01-20 21:50:28,521 [INFO]: isatab.py(validate:4363) &gt;&gt; Checking required fields...
+2021-01-20 21:50:28,522 [INFO]: isatab.py(validate:4366) &gt;&gt; Checking generic fields...
+2021-01-20 21:50:28,524 [INFO]: isatab.py(validate:4377) &gt;&gt; Checking unit fields...
+2021-01-20 21:50:28,524 [INFO]: isatab.py(validate:4387) &gt;&gt; Checking protocol fields...
+2021-01-20 21:50:28,525 [WARNING]: isatab.py(check_protocol_fields:4014) &gt;&gt; (W) Protocol(s) of type ['nucleic acid extraction'] defined in the ISA-configuration expected as a between 'Sample Name' and 'Extract Name' but has not been found, in the file 'a_assay_1.txt'
+2021-01-20 21:50:28,526 [WARNING]: isatab.py(check_protocol_fields:4014) &gt;&gt; (W) Protocol(s) of type ['library construction'] defined in the ISA-configuration expected as a between 'Extract Name' and 'Assay Name' but has not been found, in the file 'a_assay_1.txt'
+2021-01-20 21:50:28,527 [WARNING]: isatab.py(validate:4392) &gt;&gt; (W) There are some protocol inconsistencies in a_assay_1.txt against ('genome sequencing', 'nucleotide sequencing') configuration
+2021-01-20 21:50:28,528 [INFO]: isatab.py(validate:4399) &gt;&gt; Checking ontology fields...
+2021-01-20 21:50:28,529 [INFO]: isatab.py(validate:4412) &gt;&gt; Checking study group size...
+2021-01-20 21:50:28,529 [INFO]: isatab.py(validate:4416) &gt;&gt; Finished validation on a_assay_1.txt
+2021-01-20 21:50:28,530 [INFO]: isatab.py(validate:4422) &gt;&gt; Checking consistencies between study sample table and assay tables...
+2021-01-20 21:50:28,531 [INFO]: isatab.py(validate:4427) &gt;&gt; Finished checking study sample table against assay tables...
+2021-01-20 21:50:28,531 [INFO]: isatab.py(validate:4345) &gt;&gt; Loading... a_assay_2.txt
+2021-01-20 21:50:28,534 [INFO]: isatab.py(validate:4353) &gt;&gt; Validating a_assay_2.txt against assay table configuration (transcription profiling, nucleotide sequencing)...
+2021-01-20 21:50:28,535 [INFO]: isatab.py(validate:4359) &gt;&gt; Checking Factor Value presence...
+2021-01-20 21:50:28,535 [INFO]: isatab.py(validate:4363) &gt;&gt; Checking required fields...
+2021-01-20 21:50:28,536 [WARNING]: isatab.py(check_required_fields:3683) &gt;&gt; (W) Required field 'Parameter Value[library layout]' not found in the file 'a_assay_2.txt'
+2021-01-20 21:50:28,536 [INFO]: isatab.py(validate:4366) &gt;&gt; Checking generic fields...
+2021-01-20 21:50:28,539 [INFO]: isatab.py(validate:4377) &gt;&gt; Checking unit fields...
+2021-01-20 21:50:28,540 [INFO]: isatab.py(validate:4387) &gt;&gt; Checking protocol fields...
+2021-01-20 21:50:28,541 [WARNING]: isatab.py(check_protocol_fields:4014) &gt;&gt; (W) Protocol(s) of type ['library construction'] defined in the ISA-configuration expected as a between 'Extract Name' and 'Assay Name' but has not been found, in the file 'a_assay_2.txt'
+2021-01-20 21:50:28,541 [WARNING]: isatab.py(validate:4392) &gt;&gt; (W) There are some protocol inconsistencies in a_assay_2.txt against ('transcription profiling', 'nucleotide sequencing') configuration
+2021-01-20 21:50:28,542 [INFO]: isatab.py(validate:4399) &gt;&gt; Checking ontology fields...
+2021-01-20 21:50:28,542 [INFO]: isatab.py(validate:4412) &gt;&gt; Checking study group size...
+2021-01-20 21:50:28,543 [INFO]: isatab.py(validate:4416) &gt;&gt; Finished validation on a_assay_2.txt
+2021-01-20 21:50:28,543 [INFO]: isatab.py(validate:4422) &gt;&gt; Checking consistencies between study sample table and assay tables...
+2021-01-20 21:50:28,544 [INFO]: isatab.py(validate:4427) &gt;&gt; Finished checking study sample table against assay tables...
+2021-01-20 21:50:28,752 [INFO]: utils.py(detect_isatab_process_pooling:89) &gt;&gt; Checking s_study.txt
+2021-01-20 21:50:28,753 [INFO]: utils.py(detect_isatab_process_pooling:98) &gt;&gt; Checking a_assay_1.txt
+2021-01-20 21:50:28,757 [INFO]: utils.py(detect_graph_process_pooling:69) &gt;&gt; Possible process pooling detected on:  sequencing_1
+2021-01-20 21:50:28,758 [INFO]: utils.py(detect_graph_process_pooling:69) &gt;&gt; Possible process pooling detected on:  sequencing_1
+2021-01-20 21:50:28,759 [INFO]: utils.py(detect_graph_process_pooling:69) &gt;&gt; Possible process pooling detected on:  sequencing_1
+2021-01-20 21:50:28,759 [INFO]: utils.py(detect_isatab_process_pooling:98) &gt;&gt; Checking a_assay_2.txt
+2021-01-20 21:50:28,764 [INFO]: utils.py(detect_graph_process_pooling:69) &gt;&gt; Possible process pooling detected on:  sequencing_2
+2021-01-20 21:50:28,765 [INFO]: utils.py(detect_graph_process_pooling:69) &gt;&gt; Possible process pooling detected on:  sequencing_2
+2021-01-20 21:50:28,765 [INFO]: utils.py(detect_graph_process_pooling:69) &gt;&gt; Possible process pooling detected on:  sequencing_2
+2021-01-20 21:50:28,766 [INFO]: utils.py(detect_graph_process_pooling:69) &gt;&gt; Possible process pooling detected on:  analysis
+2021-01-20 21:50:28,767 [INFO]: utils.py(detect_graph_process_pooling:69) &gt;&gt; Possible process pooling detected on:  analysis
+2021-01-20 21:50:28,767 [INFO]: utils.py(detect_graph_process_pooling:69) &gt;&gt; Possible process pooling detected on:  analysis
+2021-01-20 21:50:28,768 [INFO]: isatab.py(validate:4440) &gt;&gt; Finished validation...
+</pre>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_json_report</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;errors&#39;: [], &#39;warnings&#39;: [{&#39;message&#39;: &#39;DOI is not valid format&#39;, &#39;supplemental&#39;: &#39;Found 10.1038/sdata.2016.18 in DOI field&#39;, &#39;code&#39;: 3002}, {&#39;message&#39;: &#39;Missing Protocol declaration&#39;, &#39;supplemental&#39;: &quot;Protocol(s) of type [&#39;nucleic acid extraction&#39;] defined in the ISA-configuration expected as a between &#39;Sample Name&#39; and &#39;Extract Name&#39; but has not been found, in the file &#39;a_assay_1.txt&#39;&quot;, &#39;code&#39;: 1007}, {&#39;message&#39;: &#39;Missing Protocol declaration&#39;, &#39;supplemental&#39;: &quot;Protocol(s) of type [&#39;library construction&#39;] defined in the ISA-configuration expected as a between &#39;Extract Name&#39; and &#39;Assay Name&#39; but has not been found, in the file &#39;a_assay_1.txt&#39;&quot;, &#39;code&#39;: 1007}, {&#39;message&#39;: &#39;A required column in assay table is not present&#39;, &#39;supplemental&#39;: &quot;Required field &#39;Parameter Value[library layout]&#39; not found in the file &#39;a_assay_2.txt&#39;&quot;, &#39;code&#39;: 4010}, {&#39;message&#39;: &#39;Missing Protocol declaration&#39;, &#39;supplemental&#39;: &quot;Protocol(s) of type [&#39;library construction&#39;] defined in the ISA-configuration expected as a between &#39;Extract Name&#39; and &#39;Assay Name&#39; but has not been found, in the file &#39;a_assay_2.txt&#39;&quot;, &#39;code&#39;: 1007}], &#39;info&#39;: [{&#39;message&#39;: &#39;Found -1 study groups in s_study.txt&#39;, &#39;supplemental&#39;: &#39;Found -1 study groups in s_study.txt&#39;, &#39;code&#39;: 5001}, {&#39;message&#39;: &#39;Found -1 study groups in a_assay_1.txt&#39;, &#39;supplemental&#39;: &#39;Found -1 study groups in a_assay_1.txt&#39;, &#39;code&#39;: 5001}, {&#39;message&#39;: &#39;Found -1 study groups in a_assay_2.txt&#39;, &#39;supplemental&#39;: &#39;Found -1 study groups in a_assay_2.txt&#39;, &#39;code&#39;: 5001}], &#39;validation_finished&#39;: True}
+</pre></div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="isa-create-sample-assay-plan-lc-dad.html" title="previous page">ISA Create - Sample Assay Plan as a Graph: LC-Diode-Array-Assay Spectrometry</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The ISA Team<br/>
+        
+            &copy; Copyright 2021 (CC-BY 4.0).<br/>
+          <div class="extra_footer">
+            <script>mermaid.init();</script> <div class="row_footer"> This page was created thanks to work by <a href="https://github.com/jupyter/jupyter-book/graphs/contributors">The Jupyter Book Community</a></div> <div class="row_footer"> This project is supported financially by the <a href="https://wellcome.org/">Welcome Trust</a>, Elixir-UK and the European Union</div>
+<div class="row_footer"> <div class="column" style="center"><a href="https://wellcome.org/"><img src="../_static/images/logo/wellcome-logo-black.png" height="25" alt="Wellcome" style="float:center""></a></div> <div class="column"><a href="https://www.elixir-uk.org.eu/"><img src="../_static/images/logo/elixir-uk_transparent.png" height="40" alt="IMI logo" style="float:center""></a></div> <div class="column"><a href="https://https://ec.europa.eu/programmes/horizon2020/en"><img src="../_static/images/logo/eu-flag-recolored.png" height="25" alt="EFPIA logo" style="float:center""></a></div> </div>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>
