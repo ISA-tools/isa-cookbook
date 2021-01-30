@@ -1,0 +1,1049 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>&lt;no title&gt; &#8212; The ISA cookbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/mermaid.js"></script>
+    <script src="../../_static/mermaid.min.js"></script>
+    <script src="../../_static/mermaid.core.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <link rel="canonical" href="https://isa-tools.github.io/isa-cookbook/content/notebooks/Untitled.html" />
+    <link rel="shortcut icon" href="../../_static/isa.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://isa-tools.github.io/isa-cookbook/content/notebooks/Untitled.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="<no title>" />
+<meta property="og:description" content="" />
+<meta property="og:image"       content="https://isa-tools.github.io/isa-cookbook/_static/isa_footer_logo.svg" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/isa_footer_logo.svg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The ISA cookbook</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="../index.html">1. ISA tools API</a>
+  </li>
+  <li class="">
+    <a href="../installation.html">2. ISA-API Installation</a>
+  </li>
+  <li class="">
+    <a href="../isamodel.html">3. ISA data model</a>
+  </li>
+  <li class="">
+    <a href="../reading.html">4. Reading in ISA-Tab or ISA JSON</a>
+  </li>
+  <li class="">
+    <a href="../creation.html">5. Creating ISA content</a>
+  </li>
+  <li class="">
+    <a href="../validation.html">6. Validating ISA-Tab and ISA JSON</a>
+  </li>
+  <li class="">
+    <a href="../conversions.html">7. Converting between ISA format</a>
+  </li>
+  <li class="">
+    <a href="../importdata.html">8. Importing data into ISA formats</a>
+  </li>
+  <li class="">
+    <a href="../exportdata.html">9. Exporting data from ISA formats</a>
+  </li>
+  <li class="">
+    <a href="../examples.html">10. Example programs using the ISA API</a>
+  </li>
+  <li class="">
+    <a href="../github.html">11. Downloading files stored in Github</a>
+  </li>
+  <li class="">
+    <a href="../knownissues.html">12. Known issues</a>
+  </li>
+  <li class="">
+    <a href="isa-create-sample-assay-plan-htp-imaging.html">13. ISA Create - Sample Assay Plan as a Graph: Phenotyping by HT imaging Spectrometry</a>
+  </li>
+  <li class="">
+    <a href="isa-create-sample-assay-plan-lc-dad.html">14. ISA Create - Sample Assay Plan as a Graph: LC-Diode-Array-Assay Spectrometry</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/notebooks/Untitled.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/isa-tools/isa-cookbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/isa-tools/isa-cookbook/issues/new?title=Issue%20on%20page%20%2Fcontent/notebooks/Untitled.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/isa-tools/isa-cookbook/edit/main/isa-book/content/notebooks/Untitled.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/isa-tools/isa-cookbook/main?urlpath=lab/tree/isa-book/content/notebooks/Untitled.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/isa-tools/isa-cookbook/blob/main/isa-book/content/notebooks/Untitled.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+    </ul>
+</nav>
+
+
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/isa-tools/isa-cookbook/edit/main/isa-book/content/notebooks/Untitled.ipynb">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">isatools</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">isatools</span> <span class="kn">import</span> <span class="n">isatab</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_json_report_bii_i_1</span> <span class="o">=</span> <span class="n">isatab</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;./BII-I-1/&#39;</span><span class="p">,</span> <span class="s1">&#39;i_investigation.txt&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">2021-01-29 17:26:22,242 [INFO]: isatab.py(validate:4202) &gt;&gt; Loading... ./BII-I-1/i_investigation.txt
+2021-01-29 17:26:22,459 [INFO]: isatab.py(validate:4204) &gt;&gt; Running prechecks...
+2021-01-29 17:26:22,672 [WARNING]: isatab.py(check_doi:2172) &gt;&gt; (W) DOI doi:10.1186/jbiol54 does not conform to DOI format
+2021-01-29 17:26:22,673 [WARNING]: isatab.py(check_doi:2172) &gt;&gt; (W) DOI doi:10.1186/jbiol54 does not conform to DOI format
+2021-01-29 17:26:22,674 [INFO]: isatab.py(validate:4225) &gt;&gt; Finished prechecks...
+2021-01-29 17:26:22,674 [INFO]: isatab.py(validate:4226) &gt;&gt; Loading configurations found in /Users/philippe/.pyenv/versions/3.8.0/envs/isa-api-py38/src/isatools/isatools/resources/config/xml
+2021-01-29 17:26:22,757 [INFO]: isatab.py(validate:4231) &gt;&gt; Using configurations found in /Users/philippe/.pyenv/versions/3.8.0/envs/isa-api-py38/src/isatools/isatools/resources/config/xml
+2021-01-29 17:26:22,758 [INFO]: isatab.py(validate:4233) &gt;&gt; Checking investigation file against configuration...
+2021-01-29 17:26:22,761 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3343) &gt;&gt; (W) A property value in Study Publication DOI.2 of investigation file at column 1 is required
+2021-01-29 17:26:22,762 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3343) &gt;&gt; (W) A property value in Study Publication Author List.2 of investigation file at column 1 is required
+2021-01-29 17:26:22,763 [INFO]: isatab.py(validate:4236) &gt;&gt; Finished checking investigation file
+2021-01-29 17:26:22,764 [INFO]: isatab.py(validate:4255) &gt;&gt; Loading... s_BII-S-1.txt
+2021-01-29 17:26:22,770 [INFO]: isatab.py(validate:4261) &gt;&gt; Validating s_BII-S-1.txt against default study table configuration
+2021-01-29 17:26:22,771 [INFO]: isatab.py(validate:4263) &gt;&gt; Checking Factor Value presence...
+2021-01-29 17:26:22,779 [INFO]: isatab.py(validate:4266) &gt;&gt; Checking required fields...
+2021-01-29 17:26:22,780 [INFO]: isatab.py(validate:4269) &gt;&gt; Checking generic fields...
+2021-01-29 17:26:22,862 [INFO]: isatab.py(validate:4277) &gt;&gt; Checking unit fields...
+2021-01-29 17:26:22,863 [INFO]: isatab.py(validate:4284) &gt;&gt; Checking protocol fields...
+2021-01-29 17:26:22,864 [WARNING]: isatab.py(check_protocol_fields:4014) &gt;&gt; (W) Protocol(s) of type ['sample collection'] defined in the ISA-configuration expected as a between 'Source Name' and 'Sample Name' but has not been found, in the file 's_BII-S-1.txt'
+2021-01-29 17:26:22,864 [WARNING]: isatab.py(validate:4289) &gt;&gt; (W) There are some protocol inconsistencies in s_BII-S-1.txt against Study Sample configuration
+2021-01-29 17:26:22,865 [INFO]: isatab.py(validate:4294) &gt;&gt; Checking ontology fields...
+2021-01-29 17:26:22,926 [INFO]: isatab.py(validate:4304) &gt;&gt; Checking study group size...
+2021-01-29 17:26:22,932 [INFO]: isatab.py(validate:4308) &gt;&gt; Finished validation on s_BII-S-1.txt
+2021-01-29 17:26:22,936 [INFO]: isatab.py(validate:4345) &gt;&gt; Loading... a_proteome.txt
+2021-01-29 17:26:22,948 [INFO]: isatab.py(validate:4353) &gt;&gt; Validating a_proteome.txt against assay table configuration (protein expression profiling, mass spectrometry)...
+2021-01-29 17:26:22,949 [INFO]: isatab.py(validate:4359) &gt;&gt; Checking Factor Value presence...
+2021-01-29 17:26:22,962 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[limiting nutrient]' at row 3 in a_proteome.txt
+2021-01-29 17:26:22,965 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[limiting nutrient]' at row 4 in a_proteome.txt
+2021-01-29 17:26:22,966 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[limiting nutrient]' at row 5 in a_proteome.txt
+2021-01-29 17:26:22,966 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[limiting nutrient]' at row 9 in a_proteome.txt
+2021-01-29 17:26:22,967 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[limiting nutrient]' at row 10 in a_proteome.txt
+2021-01-29 17:26:22,968 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[limiting nutrient]' at row 11 in a_proteome.txt
+2021-01-29 17:26:22,969 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[limiting nutrient]' at row 14 in a_proteome.txt
+2021-01-29 17:26:22,970 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[limiting nutrient]' at row 15 in a_proteome.txt
+2021-01-29 17:26:22,971 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[limiting nutrient]' at row 16 in a_proteome.txt
+2021-01-29 17:26:22,971 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[limiting nutrient]' at row 17 in a_proteome.txt
+2021-01-29 17:26:22,981 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[rate]' at row 3 in a_proteome.txt
+2021-01-29 17:26:22,982 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[rate]' at row 4 in a_proteome.txt
+2021-01-29 17:26:22,982 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[rate]' at row 5 in a_proteome.txt
+2021-01-29 17:26:22,983 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[rate]' at row 9 in a_proteome.txt
+2021-01-29 17:26:22,984 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[rate]' at row 10 in a_proteome.txt
+2021-01-29 17:26:22,984 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[rate]' at row 11 in a_proteome.txt
+2021-01-29 17:26:22,992 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[rate]' at row 14 in a_proteome.txt
+2021-01-29 17:26:22,998 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[rate]' at row 15 in a_proteome.txt
+2021-01-29 17:26:22,999 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[rate]' at row 16 in a_proteome.txt
+2021-01-29 17:26:23,000 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[rate]' at row 17 in a_proteome.txt
+2021-01-29 17:26:23,002 [INFO]: isatab.py(validate:4363) &gt;&gt; Checking required fields...
+2021-01-29 17:26:23,004 [INFO]: isatab.py(validate:4366) &gt;&gt; Checking generic fields...
+2021-01-29 17:26:23,060 [INFO]: isatab.py(validate:4377) &gt;&gt; Checking unit fields...
+2021-01-29 17:26:23,061 [INFO]: isatab.py(validate:4387) &gt;&gt; Checking protocol fields...
+2021-01-29 17:26:23,062 [WARNING]: isatab.py(check_protocol_fields:4014) &gt;&gt; (W) Protocol(s) of type ['extraction'] defined in the ISA-configuration expected as a between 'Sample Name' and 'Extract Name' but has not been found, in the file 'a_proteome.txt'
+2021-01-29 17:26:23,063 [WARNING]: isatab.py(check_protocol_fields:4014) &gt;&gt; (W) Protocol(s) of type ['mass spectrometry'] defined in the ISA-configuration expected as a between 'Labeled Extract Name' and 'MS Assay Name' but has not been found, in the file 'a_proteome.txt'
+2021-01-29 17:26:23,064 [WARNING]: isatab.py(check_protocol_fields:4014) &gt;&gt; (W) Protocol(s) of type ['data transformation'] defined in the ISA-configuration expected as a between 'Raw Spectral Data File' and 'Normalization Name' but has not been found, in the file 'a_proteome.txt'
+2021-01-29 17:26:23,065 [WARNING]: isatab.py(validate:4392) &gt;&gt; (W) There are some protocol inconsistencies in a_proteome.txt against ('protein expression profiling', 'mass spectrometry') configuration
+2021-01-29 17:26:23,066 [INFO]: isatab.py(validate:4399) &gt;&gt; Checking ontology fields...
+2021-01-29 17:26:23,075 [INFO]: isatab.py(validate:4412) &gt;&gt; Checking study group size...
+2021-01-29 17:26:23,077 [INFO]: isatab.py(validate:4416) &gt;&gt; Finished validation on a_proteome.txt
+2021-01-29 17:26:23,078 [INFO]: isatab.py(validate:4422) &gt;&gt; Checking consistencies between study sample table and assay tables...
+2021-01-29 17:26:23,078 [INFO]: isatab.py(validate:4427) &gt;&gt; Finished checking study sample table against assay tables...
+</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">2021-01-29 17:26:23,079 [INFO]: isatab.py(validate:4345) &gt;&gt; Loading... a_metabolome.txt
+2021-01-29 17:26:23,087 [INFO]: isatab.py(validate:4353) &gt;&gt; Validating a_metabolome.txt against assay table configuration (metabolite profiling, mass spectrometry)...
+2021-01-29 17:26:23,088 [INFO]: isatab.py(validate:4359) &gt;&gt; Checking Factor Value presence...
+2021-01-29 17:26:23,100 [INFO]: isatab.py(validate:4363) &gt;&gt; Checking required fields...
+2021-01-29 17:26:23,101 [INFO]: isatab.py(validate:4366) &gt;&gt; Checking generic fields...
+2021-01-29 17:26:23,187 [INFO]: isatab.py(validate:4377) &gt;&gt; Checking unit fields...
+2021-01-29 17:26:23,188 [INFO]: isatab.py(validate:4387) &gt;&gt; Checking protocol fields...
+2021-01-29 17:26:23,188 [WARNING]: isatab.py(check_protocol_fields:4014) &gt;&gt; (W) Protocol(s) of type ['mass spectrometry', 'labeling'] defined in the ISA-configuration expected as a between 'Extract Name' and 'MS Assay Name' but has not been found, in the file 'a_metabolome.txt'
+2021-01-29 17:26:23,190 [WARNING]: isatab.py(validate:4392) &gt;&gt; (W) There are some protocol inconsistencies in a_metabolome.txt against ('metabolite profiling', 'mass spectrometry') configuration
+2021-01-29 17:26:23,191 [INFO]: isatab.py(validate:4399) &gt;&gt; Checking ontology fields...
+2021-01-29 17:26:23,191 [INFO]: isatab.py(validate:4412) &gt;&gt; Checking study group size...
+2021-01-29 17:26:23,195 [INFO]: isatab.py(validate:4416) &gt;&gt; Finished validation on a_metabolome.txt
+2021-01-29 17:26:23,196 [INFO]: isatab.py(validate:4422) &gt;&gt; Checking consistencies between study sample table and assay tables...
+2021-01-29 17:26:23,197 [INFO]: isatab.py(validate:4427) &gt;&gt; Finished checking study sample table against assay tables...
+2021-01-29 17:26:23,198 [INFO]: isatab.py(validate:4345) &gt;&gt; Loading... a_transcriptome.txt
+2021-01-29 17:26:23,206 [INFO]: isatab.py(validate:4353) &gt;&gt; Validating a_transcriptome.txt against assay table configuration (transcription profiling, DNA microarray)...
+2021-01-29 17:26:23,207 [INFO]: isatab.py(validate:4359) &gt;&gt; Checking Factor Value presence...
+2021-01-29 17:26:23,214 [INFO]: isatab.py(validate:4363) &gt;&gt; Checking required fields...
+2021-01-29 17:26:23,215 [INFO]: isatab.py(validate:4366) &gt;&gt; Checking generic fields...
+2021-01-29 17:26:23,285 [INFO]: isatab.py(validate:4377) &gt;&gt; Checking unit fields...
+2021-01-29 17:26:23,286 [INFO]: isatab.py(validate:4387) &gt;&gt; Checking protocol fields...
+2021-01-29 17:26:23,287 [WARNING]: isatab.py(check_protocol_fields:4014) &gt;&gt; (W) Protocol(s) of type ['RNA extraction'] defined in the ISA-configuration expected as a between 'Sample Name' and 'Extract Name' but has not been found, in the file 'a_transcriptome.txt'
+2021-01-29 17:26:23,288 [WARNING]: isatab.py(check_protocol_fields:4014) &gt;&gt; (W) Protocol(s) of type ['nucleic acid hybridization'] defined in the ISA-configuration expected as a between 'Labeled Extract Name' and 'Hybridization Assay Name' but has not been found, in the file 'a_transcriptome.txt'
+2021-01-29 17:26:23,289 [WARNING]: isatab.py(check_protocol_fields:4014) &gt;&gt; (W) Protocol(s) of type ['data collection'] defined in the ISA-configuration expected as a between 'Hybridization Assay Name' and 'Scan Name' but has not been found, in the file 'a_transcriptome.txt'
+2021-01-29 17:26:23,289 [WARNING]: isatab.py(check_protocol_fields:4014) &gt;&gt; (W) Protocol(s) of type ['normalization data transformation'] defined in the ISA-configuration expected as a between 'Array Data File' and 'Normalization Name' but has not been found, in the file 'a_transcriptome.txt'
+2021-01-29 17:26:23,290 [WARNING]: isatab.py(validate:4392) &gt;&gt; (W) There are some protocol inconsistencies in a_transcriptome.txt against ('transcription profiling', 'DNA microarray') configuration
+2021-01-29 17:26:23,290 [INFO]: isatab.py(validate:4399) &gt;&gt; Checking ontology fields...
+2021-01-29 17:26:23,307 [INFO]: isatab.py(validate:4412) &gt;&gt; Checking study group size...
+2021-01-29 17:26:23,310 [INFO]: isatab.py(validate:4416) &gt;&gt; Finished validation on a_transcriptome.txt
+2021-01-29 17:26:23,311 [INFO]: isatab.py(validate:4422) &gt;&gt; Checking consistencies between study sample table and assay tables...
+2021-01-29 17:26:23,312 [INFO]: isatab.py(validate:4427) &gt;&gt; Finished checking study sample table against assay tables...
+2021-01-29 17:26:24,340 [INFO]: isatab.py(preprocess:5282) &gt;&gt; warning: Protocol REF missing between 'Labeled Extract Name' and 'MS Assay Name'
+2021-01-29 17:26:24,341 [INFO]: isatab.py(preprocess:5282) &gt;&gt; warning: Protocol REF missing between 'Raw Spectral Data File' and 'Normalization Name'
+2021-01-29 17:26:24,341 [INFO]: isatab.py(preprocess:5282) &gt;&gt; warning: Protocol REF missing between 'Post Translational Modification Assignment File' and 'Data Transformation Name'
+2021-01-29 17:26:24,342 [INFO]: isatab.py(preprocess:5326) &gt;&gt; Inserting protocol unknown in between Post Translational Modification Assignment File and Data Transformation Name
+2021-01-29 17:26:24,344 [INFO]: isatab.py(preprocess:5326) &gt;&gt; Inserting protocol unknown in between Raw Spectral Data File and Normalization Name
+2021-01-29 17:26:24,346 [INFO]: isatab.py(preprocess:5326) &gt;&gt; Inserting protocol unknown in between Labeled Extract Name and MS Assay Name
+2021-01-29 17:26:24,616 [INFO]: isatab.py(preprocess:5282) &gt;&gt; warning: Protocol REF missing between 'Extract Name' and 'MS Assay Name'
+2021-01-29 17:26:24,617 [INFO]: isatab.py(preprocess:5326) &gt;&gt; Inserting protocol unknown in between Extract Name and MS Assay Name
+2021-01-29 17:26:25,267 [INFO]: isatab.py(preprocess:5282) &gt;&gt; warning: Protocol REF missing between 'Hybridization Assay Name' and 'Scan Name'
+2021-01-29 17:26:25,268 [INFO]: isatab.py(preprocess:5282) &gt;&gt; warning: Protocol REF missing between 'Array Data File' and 'Normalization Name'
+2021-01-29 17:26:25,269 [INFO]: isatab.py(preprocess:5326) &gt;&gt; Inserting protocol unknown in between Array Data File and Normalization Name
+2021-01-29 17:26:25,271 [INFO]: isatab.py(preprocess:5326) &gt;&gt; Inserting protocol unknown in between Hybridization Assay Name and Scan Name
+2021-01-29 17:26:25,815 [INFO]: isatab.py(preprocess:5282) &gt;&gt; warning: Protocol REF missing between 'Hybridization Assay Name' and 'Scan Name'
+2021-01-29 17:26:25,816 [INFO]: isatab.py(preprocess:5282) &gt;&gt; warning: Protocol REF missing between 'Array Data File' and 'Data Transformation Name'
+2021-01-29 17:26:25,816 [INFO]: isatab.py(preprocess:5326) &gt;&gt; Inserting protocol unknown in between Array Data File and Data Transformation Name
+2021-01-29 17:26:25,818 [INFO]: isatab.py(preprocess:5326) &gt;&gt; Inserting protocol unknown in between Hybridization Assay Name and Scan Name
+2021-01-29 17:26:26,007 [INFO]: utils.py(detect_isatab_process_pooling:80) &gt;&gt; Checking s_BII-S-1.txt
+2021-01-29 17:26:26,741 [INFO]: utils.py(detect_isatab_process_pooling:89) &gt;&gt; Checking a_proteome.txt
+2021-01-29 17:26:26,854 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  ITRAQ labeling
+2021-01-29 17:26:26,856 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  ITRAQ labeling
+2021-01-29 17:26:26,858 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  ITRAQ labeling
+2021-01-29 17:26:26,859 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  ITRAQ labeling
+2021-01-29 17:26:26,860 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  ITRAQ labeling
+2021-01-29 17:26:26,861 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  ITRAQ labeling
+2021-01-29 17:26:26,862 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  ITRAQ labeling
+2021-01-29 17:26:26,863 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  ITRAQ labeling
+2021-01-29 17:26:26,864 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:26,864 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:26,865 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">2021-01-29 17:26:26,867 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:26,870 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:26,873 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:26,877 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:26,880 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:26,883 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:26,884 [INFO]: utils.py(detect_isatab_process_pooling:89) &gt;&gt; Checking a_metabolome.txt
+2021-01-29 17:26:27,140 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,142 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,142 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,144 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,145 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,147 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,148 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,150 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,151 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,152 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,154 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,157 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,159 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,163 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,165 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,166 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,167 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,168 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,169 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,170 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,173 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,174 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,176 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,177 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,178 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,180 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,181 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,183 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,184 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,185 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,186 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,187 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,189 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,192 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,193 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,194 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,195 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,196 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,197 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,198 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,199 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,200 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,201 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,202 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,203 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,204 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,205 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,206 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,208 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,211 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,213 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,215 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,217 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,218 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,219 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">2021-01-29 17:26:27,220 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,221 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,222 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,223 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,224 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,225 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,226 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,227 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,228 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,230 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,231 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,232 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,234 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,235 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,236 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,237 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,239 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,241 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,242 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,243 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,245 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,246 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,247 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,249 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,250 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,251 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,253 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,255 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,256 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,258 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,259 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,261 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,263 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,265 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,267 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,268 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,268 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:27,275 [INFO]: utils.py(detect_isatab_process_pooling:89) &gt;&gt; Checking a_transcriptome.txt
+2021-01-29 17:26:29,979 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,980 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,980 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,982 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,983 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,984 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,985 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,987 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,988 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,988 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,989 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,990 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,991 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,992 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,993 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,994 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,995 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,995 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,996 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,997 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,998 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:29,999 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,000 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,000 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">2021-01-29 17:26:30,001 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,002 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,002 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,003 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,004 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,005 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,005 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,006 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,007 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,009 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,010 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,012 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,013 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,014 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,015 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,015 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,016 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,017 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,018 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,018 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,019 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,020 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,021 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,022 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,023 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,024 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,025 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,026 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,027 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,028 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,029 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,030 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,032 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,033 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,034 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,035 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,036 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,036 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,037 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,038 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,039 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,041 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,043 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,045 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,046 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,047 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,048 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,048 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,049 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,050 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,051 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,051 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,052 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,053 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,054 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,056 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,057 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,059 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,060 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,062 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,064 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,064 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,065 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,066 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">2021-01-29 17:26:30,066 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,067 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,068 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,069 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,070 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,071 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,071 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,072 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,096 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:30,097 [INFO]: utils.py(detect_isatab_process_pooling:80) &gt;&gt; Checking s_BII-S-2.txt
+2021-01-29 17:26:30,108 [INFO]: utils.py(detect_isatab_process_pooling:89) &gt;&gt; Checking a_microarray.txt
+2021-01-29 17:26:30,492 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,494 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  biotin labeling
+2021-01-29 17:26:30,495 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,497 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,498 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,500 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,502 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,503 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,504 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,506 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,507 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,508 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,509 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,511 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,512 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,514 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  EukGE-WS4
+2021-01-29 17:26:30,526 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:30,528 [INFO]: isatab.py(validate:4255) &gt;&gt; Loading... s_BII-S-2.txt
+2021-01-29 17:26:30,534 [INFO]: isatab.py(validate:4261) &gt;&gt; Validating s_BII-S-2.txt against default study table configuration
+2021-01-29 17:26:30,534 [INFO]: isatab.py(validate:4263) &gt;&gt; Checking Factor Value presence...
+2021-01-29 17:26:30,535 [INFO]: isatab.py(validate:4266) &gt;&gt; Checking required fields...
+2021-01-29 17:26:30,535 [INFO]: isatab.py(validate:4269) &gt;&gt; Checking generic fields...
+2021-01-29 17:26:30,536 [INFO]: isatab.py(validate:4277) &gt;&gt; Checking unit fields...
+2021-01-29 17:26:30,537 [INFO]: isatab.py(validate:4284) &gt;&gt; Checking protocol fields...
+2021-01-29 17:26:30,538 [WARNING]: isatab.py(check_protocol_fields:4014) &gt;&gt; (W) Protocol(s) of type ['sample collection'] defined in the ISA-configuration expected as a between 'Source Name' and 'Sample Name' but has not been found, in the file 's_BII-S-2.txt'
+2021-01-29 17:26:30,540 [WARNING]: isatab.py(validate:4289) &gt;&gt; (W) There are some protocol inconsistencies in s_BII-S-2.txt against Study Sample configuration
+2021-01-29 17:26:30,541 [INFO]: isatab.py(validate:4294) &gt;&gt; Checking ontology fields...
+2021-01-29 17:26:30,543 [INFO]: isatab.py(validate:4304) &gt;&gt; Checking study group size...
+2021-01-29 17:26:30,545 [INFO]: isatab.py(validate:4308) &gt;&gt; Finished validation on s_BII-S-2.txt
+2021-01-29 17:26:30,545 [INFO]: isatab.py(validate:4345) &gt;&gt; Loading... a_microarray.txt
+2021-01-29 17:26:30,552 [INFO]: isatab.py(validate:4353) &gt;&gt; Validating a_microarray.txt against assay table configuration (transcription profiling, DNA microarray)...
+2021-01-29 17:26:30,553 [INFO]: isatab.py(validate:4359) &gt;&gt; Checking Factor Value presence...
+2021-01-29 17:26:30,568 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[compound]' at row 0 in a_microarray.txt
+2021-01-29 17:26:30,569 [WARNING]: isatab.py(check_factor_value_presence:3660) &gt;&gt; (W) Missing value for 'Factor Value[compound]' at row 7 in a_microarray.txt
+2021-01-29 17:26:30,569 [INFO]: isatab.py(validate:4363) &gt;&gt; Checking required fields...
+2021-01-29 17:26:30,570 [INFO]: isatab.py(validate:4366) &gt;&gt; Checking generic fields...
+2021-01-29 17:26:30,594 [INFO]: isatab.py(validate:4377) &gt;&gt; Checking unit fields...
+2021-01-29 17:26:30,595 [INFO]: isatab.py(validate:4387) &gt;&gt; Checking protocol fields...
+2021-01-29 17:26:30,596 [WARNING]: isatab.py(check_protocol_fields:4014) &gt;&gt; (W) Protocol(s) of type ['RNA extraction'] defined in the ISA-configuration expected as a between 'Sample Name' and 'Extract Name' but has not been found, in the file 'a_microarray.txt'
+2021-01-29 17:26:30,597 [WARNING]: isatab.py(check_protocol_fields:4014) &gt;&gt; (W) Protocol(s) of type ['nucleic acid hybridization'] defined in the ISA-configuration expected as a between 'Labeled Extract Name' and 'Hybridization Assay Name' but has not been found, in the file 'a_microarray.txt'
+2021-01-29 17:26:30,598 [WARNING]: isatab.py(check_protocol_fields:4014) &gt;&gt; (W) Protocol(s) of type ['data collection'] defined in the ISA-configuration expected as a between 'Hybridization Assay Name' and 'Scan Name' but has not been found, in the file 'a_microarray.txt'
+2021-01-29 17:26:30,599 [WARNING]: isatab.py(check_protocol_fields:4014) &gt;&gt; (W) Protocol(s) of type ['normalization data transformation', 'data transformation'] defined in the ISA-configuration expected as a between 'Array Data File' and 'Data Transformation Name' but has not been found, in the file 'a_microarray.txt'
+2021-01-29 17:26:30,599 [WARNING]: isatab.py(validate:4392) &gt;&gt; (W) There are some protocol inconsistencies in a_microarray.txt against ('transcription profiling', 'DNA microarray') configuration
+2021-01-29 17:26:30,600 [INFO]: isatab.py(validate:4399) &gt;&gt; Checking ontology fields...
+2021-01-29 17:26:30,606 [INFO]: isatab.py(validate:4412) &gt;&gt; Checking study group size...
+2021-01-29 17:26:30,608 [INFO]: isatab.py(validate:4416) &gt;&gt; Finished validation on a_microarray.txt
+2021-01-29 17:26:30,609 [INFO]: isatab.py(validate:4422) &gt;&gt; Checking consistencies between study sample table and assay tables...
+2021-01-29 17:26:30,609 [INFO]: isatab.py(validate:4427) &gt;&gt; Finished checking study sample table against assay tables...
+2021-01-29 17:26:30,609 [INFO]: isatab.py(validate:4440) &gt;&gt; Finished validation...
+</pre>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;./BII-S-3&#39;</span><span class="p">,</span> <span class="s1">&#39;i_gilbert.txt&#39;</span><span class="p">))</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+            <span class="n">ISA</span> <span class="o">=</span> <span class="n">isatab</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ISA</span><span class="o">.</span><span class="n">studies</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">description</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Sequencing the metatranscriptome can provide information about the response of organisms to varying environmental conditions. We present a methodology for obtaining random whole-community mRNA from a complex microbial assemblage using Pyrosequencing. The metatranscriptome had, with minimum contamination by ribosomal RNA, significant coverage of abundant transcripts, and included significantly more potentially novel proteins than in the metagenome. This experiment is part of a much larger experiment. We have produced 4 454 metatranscriptomic datasets and 6 454 metagenomic datasets. These were derived from 4 samples.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_json_report_bii_s_3</span> <span class="o">=</span> <span class="n">isatab</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;./BII-S-3/&#39;</span><span class="p">,</span> <span class="s1">&#39;i_gilbert.txt&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">2021-01-29 17:26:31,299 [INFO]: isatab.py(validate:4202) &gt;&gt; Loading... ./BII-S-3/i_gilbert.txt
+2021-01-29 17:26:31,435 [INFO]: isatab.py(validate:4204) &gt;&gt; Running prechecks...
+2021-01-29 17:26:31,610 [WARNING]: isatab.py(check_protocol_usage:2519) &gt;&gt; (W) Some protocols declared in the investigation file are not used neither in the study file s_BII-S-3.txt nor in any related assay file: ['sequence analysis - standard procedure 7', 'reverse transcription - standard procedure 5']
+2021-01-29 17:26:31,678 [WARNING]: isatab.py(check_doi:2172) &gt;&gt; (W) DOI 10.1371/journal.pone.0003042 does not conform to DOI format
+2021-01-29 17:26:31,679 [WARNING]: isatab.py(check_doi:2172) &gt;&gt; (W) DOI 10.1111/j.1462-2920.2008.01745.x does not conform to DOI format
+2021-01-29 17:26:31,679 [INFO]: isatab.py(validate:4225) &gt;&gt; Finished prechecks...
+2021-01-29 17:26:31,680 [INFO]: isatab.py(validate:4226) &gt;&gt; Loading configurations found in /Users/philippe/.pyenv/versions/3.8.0/envs/isa-api-py38/src/isatools/isatools/resources/config/xml
+2021-01-29 17:26:31,710 [INFO]: isatab.py(validate:4231) &gt;&gt; Using configurations found in /Users/philippe/.pyenv/versions/3.8.0/envs/isa-api-py38/src/isatools/isatools/resources/config/xml
+2021-01-29 17:26:31,711 [INFO]: isatab.py(validate:4233) &gt;&gt; Checking investigation file against configuration...
+2021-01-29 17:26:31,712 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Investigation Title of investigation file at column 1 is required
+2021-01-29 17:26:31,712 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Investigation Description of investigation file at column 1 is required
+2021-01-29 17:26:31,715 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Study Person Mid Initials of investigation file at column 2 is required
+2021-01-29 17:26:31,716 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Study Person Mid Initials of investigation file at column 3 is required
+2021-01-29 17:26:31,716 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Study Person Mid Initials of investigation file at column 4 is required
+2021-01-29 17:26:31,717 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Study Person Mid Initials of investigation file at column 5 is required
+2021-01-29 17:26:31,718 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Study Person Mid Initials of investigation file at column 6 is required
+2021-01-29 17:26:31,718 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Study Person Mid Initials of investigation file at column 7 is required
+2021-01-29 17:26:31,719 [INFO]: isatab.py(validate:4236) &gt;&gt; Finished checking investigation file
+2021-01-29 17:26:31,721 [INFO]: isatab.py(validate:4255) &gt;&gt; Loading... s_BII-S-3.txt
+2021-01-29 17:26:31,762 [INFO]: isatab.py(validate:4261) &gt;&gt; Validating s_BII-S-3.txt against default study table configuration
+2021-01-29 17:26:31,763 [INFO]: isatab.py(validate:4263) &gt;&gt; Checking Factor Value presence...
+2021-01-29 17:26:31,894 [INFO]: isatab.py(validate:4266) &gt;&gt; Checking required fields...
+2021-01-29 17:26:31,895 [INFO]: isatab.py(validate:4269) &gt;&gt; Checking generic fields...
+2021-01-29 17:26:31,901 [INFO]: isatab.py(validate:4277) &gt;&gt; Checking unit fields...
+2021-01-29 17:26:31,902 [INFO]: isatab.py(validate:4284) &gt;&gt; Checking protocol fields...
+2021-01-29 17:26:31,904 [INFO]: isatab.py(validate:4294) &gt;&gt; Checking ontology fields...
+2021-01-29 17:26:31,910 [INFO]: isatab.py(validate:4304) &gt;&gt; Checking study group size...
+2021-01-29 17:26:31,914 [INFO]: isatab.py(validate:4308) &gt;&gt; Finished validation on s_BII-S-3.txt
+2021-01-29 17:26:31,915 [INFO]: isatab.py(validate:4345) &gt;&gt; Loading... a_gilbert-assay-Gx.txt
+2021-01-29 17:26:31,920 [INFO]: isatab.py(validate:4353) &gt;&gt; Validating a_gilbert-assay-Gx.txt against assay table configuration (metagenome sequencing, nucleotide sequencing)...
+2021-01-29 17:26:31,920 [INFO]: isatab.py(validate:4359) &gt;&gt; Checking Factor Value presence...
+2021-01-29 17:26:31,921 [INFO]: isatab.py(validate:4363) &gt;&gt; Checking required fields...
+2021-01-29 17:26:31,921 [INFO]: isatab.py(validate:4366) &gt;&gt; Checking generic fields...
+2021-01-29 17:26:31,922 [WARNING]: isatab.py(check_single_field:3824) &gt;&gt; (W) Invalid value 'WGS' for type 'list' of the field 'Parameter Value[library strategy]'
+2021-01-29 17:26:31,923 [WARNING]: isatab.py(check_single_field:3828) &gt;&gt; (W) Value must be one of: AMPLICON,OTHER
+2021-01-29 17:26:31,924 [WARNING]: isatab.py(validate:4370) &gt;&gt; (W) There are some field value inconsistencies in a_gilbert-assay-Gx.txt against ('metagenome sequencing', 'nucleotide sequencing') configuration
+2021-01-29 17:26:31,925 [INFO]: isatab.py(validate:4377) &gt;&gt; Checking unit fields...
+2021-01-29 17:26:31,926 [INFO]: isatab.py(validate:4387) &gt;&gt; Checking protocol fields...
+2021-01-29 17:26:31,928 [INFO]: isatab.py(validate:4399) &gt;&gt; Checking ontology fields...
+2021-01-29 17:26:31,929 [INFO]: isatab.py(validate:4412) &gt;&gt; Checking study group size...
+2021-01-29 17:26:31,929 [INFO]: isatab.py(validate:4416) &gt;&gt; Finished validation on a_gilbert-assay-Gx.txt
+2021-01-29 17:26:31,930 [INFO]: isatab.py(validate:4422) &gt;&gt; Checking consistencies between study sample table and assay tables...
+2021-01-29 17:26:31,931 [INFO]: isatab.py(validate:4427) &gt;&gt; Finished checking study sample table against assay tables...
+2021-01-29 17:26:31,932 [INFO]: isatab.py(validate:4345) &gt;&gt; Loading... a_gilbert-assay-Tx.txt
+2021-01-29 17:26:31,940 [INFO]: isatab.py(validate:4353) &gt;&gt; Validating a_gilbert-assay-Tx.txt against assay table configuration (transcription profiling, nucleotide sequencing)...
+2021-01-29 17:26:31,941 [INFO]: isatab.py(validate:4359) &gt;&gt; Checking Factor Value presence...
+2021-01-29 17:26:31,941 [INFO]: isatab.py(validate:4363) &gt;&gt; Checking required fields...
+2021-01-29 17:26:31,942 [INFO]: isatab.py(validate:4366) &gt;&gt; Checking generic fields...
+2021-01-29 17:26:31,963 [INFO]: isatab.py(validate:4377) &gt;&gt; Checking unit fields...
+2021-01-29 17:26:31,964 [INFO]: isatab.py(validate:4387) &gt;&gt; Checking protocol fields...
+2021-01-29 17:26:31,966 [INFO]: isatab.py(validate:4399) &gt;&gt; Checking ontology fields...
+2021-01-29 17:26:31,967 [INFO]: isatab.py(validate:4412) &gt;&gt; Checking study group size...
+2021-01-29 17:26:31,967 [INFO]: isatab.py(validate:4416) &gt;&gt; Finished validation on a_gilbert-assay-Tx.txt
+2021-01-29 17:26:31,968 [INFO]: isatab.py(validate:4422) &gt;&gt; Checking consistencies between study sample table and assay tables...
+2021-01-29 17:26:31,969 [INFO]: isatab.py(validate:4427) &gt;&gt; Finished checking study sample table against assay tables...
+2021-01-29 17:26:32,636 [INFO]: utils.py(detect_isatab_process_pooling:80) &gt;&gt; Checking s_BII-S-3.txt
+2021-01-29 17:26:32,683 [INFO]: utils.py(detect_isatab_process_pooling:89) &gt;&gt; Checking a_gilbert-assay-Gx.txt
+2021-01-29 17:26:32,824 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  genomic DNA extraction - standard procedure 4
+2021-01-29 17:26:32,825 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  library construction
+2021-01-29 17:26:32,827 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  library construction
+2021-01-29 17:26:32,829 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  library construction
+2021-01-29 17:26:32,832 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  library construction
+2021-01-29 17:26:32,839 [INFO]: utils.py(detect_isatab_process_pooling:89) &gt;&gt; Checking a_gilbert-assay-Tx.txt
+2021-01-29 17:26:33,288 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  mRNA extraction - standard procedure 3
+2021-01-29 17:26:33,294 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  library construction
+</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">2021-01-29 17:26:33,300 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  library construction
+2021-01-29 17:26:33,307 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  library construction
+2021-01-29 17:26:33,314 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  library construction
+2021-01-29 17:26:33,351 [INFO]: isatab.py(validate:4440) &gt;&gt; Finished validation...
+</pre>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_json_report_bii_s_4</span> <span class="o">=</span> <span class="n">isatab</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;./BII-S-4/&#39;</span><span class="p">,</span> <span class="s1">&#39;i_investigation.txt&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">2021-01-29 17:26:33,371 [INFO]: isatab.py(validate:4202) &gt;&gt; Loading... ./BII-S-4/i_investigation.txt
+2021-01-29 17:26:33,521 [INFO]: isatab.py(validate:4204) &gt;&gt; Running prechecks...
+2021-01-29 17:26:33,597 [WARNING]: isatab.py(check_protocol_usage:2519) &gt;&gt; (W) Some protocols declared in the investigation file are not used neither in the study file s_BII-S-4.txt nor in any related assay file: ['Duplex-Specific-Nuclease-normalisation ']
+2021-01-29 17:26:33,624 [INFO]: isatab.py(validate:4225) &gt;&gt; Finished prechecks...
+2021-01-29 17:26:33,624 [INFO]: isatab.py(validate:4226) &gt;&gt; Loading configurations found in /Users/philippe/.pyenv/versions/3.8.0/envs/isa-api-py38/src/isatools/isatools/resources/config/xml
+2021-01-29 17:26:33,649 [INFO]: isatab.py(validate:4231) &gt;&gt; Using configurations found in /Users/philippe/.pyenv/versions/3.8.0/envs/isa-api-py38/src/isatools/isatools/resources/config/xml
+2021-01-29 17:26:33,650 [INFO]: isatab.py(validate:4233) &gt;&gt; Checking investigation file against configuration...
+2021-01-29 17:26:33,652 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Study Person Mid Initials of investigation file at column 1 is required
+2021-01-29 17:26:33,653 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Study Person Mid Initials of investigation file at column 2 is required
+2021-01-29 17:26:33,654 [INFO]: isatab.py(validate:4236) &gt;&gt; Finished checking investigation file
+2021-01-29 17:26:33,655 [INFO]: isatab.py(validate:4255) &gt;&gt; Loading... s_BII-S-4.txt
+2021-01-29 17:26:33,662 [INFO]: isatab.py(validate:4261) &gt;&gt; Validating s_BII-S-4.txt against default study table configuration
+2021-01-29 17:26:33,663 [INFO]: isatab.py(validate:4263) &gt;&gt; Checking Factor Value presence...
+2021-01-29 17:26:33,663 [INFO]: isatab.py(validate:4266) &gt;&gt; Checking required fields...
+2021-01-29 17:26:33,663 [INFO]: isatab.py(validate:4269) &gt;&gt; Checking generic fields...
+2021-01-29 17:26:33,665 [INFO]: isatab.py(validate:4277) &gt;&gt; Checking unit fields...
+2021-01-29 17:26:33,665 [INFO]: isatab.py(validate:4284) &gt;&gt; Checking protocol fields...
+2021-01-29 17:26:33,666 [INFO]: isatab.py(validate:4294) &gt;&gt; Checking ontology fields...
+2021-01-29 17:26:33,667 [INFO]: isatab.py(validate:4304) &gt;&gt; Checking study group size...
+2021-01-29 17:26:33,668 [INFO]: isatab.py(validate:4308) &gt;&gt; Finished validation on s_BII-S-4.txt
+2021-01-29 17:26:33,669 [INFO]: isatab.py(validate:4345) &gt;&gt; Loading... a_genome_sequencing.txt
+2021-01-29 17:26:33,676 [INFO]: isatab.py(validate:4353) &gt;&gt; Validating a_genome_sequencing.txt against assay table configuration (transcription profiling, nucleotide sequencing)...
+2021-01-29 17:26:33,676 [INFO]: isatab.py(validate:4359) &gt;&gt; Checking Factor Value presence...
+2021-01-29 17:26:33,677 [INFO]: isatab.py(validate:4363) &gt;&gt; Checking required fields...
+2021-01-29 17:26:33,677 [INFO]: isatab.py(validate:4366) &gt;&gt; Checking generic fields...
+2021-01-29 17:26:33,681 [INFO]: isatab.py(validate:4377) &gt;&gt; Checking unit fields...
+2021-01-29 17:26:33,682 [INFO]: isatab.py(validate:4387) &gt;&gt; Checking protocol fields...
+2021-01-29 17:26:33,683 [WARNING]: isatab.py(check_protocol_fields:4014) &gt;&gt; (W) Protocol(s) of type ['nucleic acid extraction'] defined in the ISA-configuration expected as a between 'Sample Name' and 'Extract Name' but has not been found, in the file 'a_genome_sequencing.txt'
+2021-01-29 17:26:33,684 [WARNING]: isatab.py(validate:4392) &gt;&gt; (W) There are some protocol inconsistencies in a_genome_sequencing.txt against ('transcription profiling', 'nucleotide sequencing') configuration
+2021-01-29 17:26:33,685 [INFO]: isatab.py(validate:4399) &gt;&gt; Checking ontology fields...
+2021-01-29 17:26:33,685 [INFO]: isatab.py(validate:4412) &gt;&gt; Checking study group size...
+2021-01-29 17:26:33,685 [INFO]: isatab.py(validate:4416) &gt;&gt; Finished validation on a_genome_sequencing.txt
+2021-01-29 17:26:33,686 [INFO]: isatab.py(validate:4422) &gt;&gt; Checking consistencies between study sample table and assay tables...
+2021-01-29 17:26:33,687 [INFO]: isatab.py(validate:4427) &gt;&gt; Finished checking study sample table against assay tables...
+2021-01-29 17:26:33,863 [INFO]: isatab.py(preprocess:5282) &gt;&gt; warning: Protocol REF missing between 'Labeled Extract Name' and 'Assay Name'
+2021-01-29 17:26:33,863 [INFO]: isatab.py(preprocess:5326) &gt;&gt; Inserting protocol unknown in between Labeled Extract Name and Assay Name
+2021-01-29 17:26:33,907 [INFO]: utils.py(detect_isatab_process_pooling:80) &gt;&gt; Checking s_BII-S-4.txt
+2021-01-29 17:26:33,915 [INFO]: utils.py(detect_isatab_process_pooling:89) &gt;&gt; Checking a_genome_sequencing.txt
+2021-01-29 17:26:33,923 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  unknown protocol
+2021-01-29 17:26:33,925 [INFO]: isatab.py(validate:4440) &gt;&gt; Finished validation...
+</pre>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_json_report_bii_s_5</span> <span class="o">=</span> <span class="n">isatab</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;./BII-S-5/&#39;</span><span class="p">,</span> <span class="s1">&#39;i_investigation.txt&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">2021-01-29 17:26:33,942 [INFO]: isatab.py(validate:4202) &gt;&gt; Loading... ./BII-S-5/i_investigation.txt
+2021-01-29 17:26:34,063 [INFO]: isatab.py(validate:4204) &gt;&gt; Running prechecks...
+2021-01-29 17:26:34,136 [WARNING]: isatab.py(check_protocol_usage:2519) &gt;&gt; (W) Some protocols declared in the investigation file are not used neither in the study file s_001456_GCAT_sample.txt nor in any related assay file: ['sample collection']
+2021-01-29 17:26:34,169 [WARNING]: isatab.py(check_doi:2172) &gt;&gt; (W) DOI 10.1186/1471-2164-10-36 does not conform to DOI format
+2021-01-29 17:26:34,170 [INFO]: isatab.py(validate:4225) &gt;&gt; Finished prechecks...
+2021-01-29 17:26:34,170 [INFO]: isatab.py(validate:4226) &gt;&gt; Loading configurations found in /Users/philippe/.pyenv/versions/3.8.0/envs/isa-api-py38/src/isatools/isatools/resources/config/xml
+2021-01-29 17:26:34,194 [INFO]: isatab.py(validate:4231) &gt;&gt; Using configurations found in /Users/philippe/.pyenv/versions/3.8.0/envs/isa-api-py38/src/isatools/isatools/resources/config/xml
+2021-01-29 17:26:34,195 [INFO]: isatab.py(validate:4233) &gt;&gt; Checking investigation file against configuration...
+2021-01-29 17:26:34,197 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Study Person Mid Initials of investigation file at column 1 is required
+2021-01-29 17:26:34,198 [INFO]: isatab.py(validate:4236) &gt;&gt; Finished checking investigation file
+2021-01-29 17:26:34,199 [INFO]: isatab.py(validate:4255) &gt;&gt; Loading... s_001456_GCAT_sample.txt
+2021-01-29 17:26:34,210 [INFO]: isatab.py(validate:4261) &gt;&gt; Validating s_001456_GCAT_sample.txt against default study table configuration
+2021-01-29 17:26:34,211 [INFO]: isatab.py(validate:4263) &gt;&gt; Checking Factor Value presence...
+2021-01-29 17:26:34,211 [INFO]: isatab.py(validate:4266) &gt;&gt; Checking required fields...
+2021-01-29 17:26:34,212 [INFO]: isatab.py(validate:4269) &gt;&gt; Checking generic fields...
+2021-01-29 17:26:34,213 [INFO]: isatab.py(validate:4277) &gt;&gt; Checking unit fields...
+2021-01-29 17:26:34,214 [INFO]: isatab.py(validate:4284) &gt;&gt; Checking protocol fields...
+2021-01-29 17:26:34,215 [WARNING]: isatab.py(check_protocol_fields:4014) &gt;&gt; (W) Protocol(s) of type ['sample collection'] defined in the ISA-configuration expected as a between 'Source Name' and 'Sample Name' but has not been found, in the file 's_001456_GCAT_sample.txt'
+2021-01-29 17:26:34,215 [WARNING]: isatab.py(validate:4289) &gt;&gt; (W) There are some protocol inconsistencies in s_001456_GCAT_sample.txt against Study Sample configuration
+2021-01-29 17:26:34,216 [INFO]: isatab.py(validate:4294) &gt;&gt; Checking ontology fields...
+2021-01-29 17:26:34,217 [INFO]: isatab.py(validate:4304) &gt;&gt; Checking study group size...
+2021-01-29 17:26:34,217 [INFO]: isatab.py(validate:4308) &gt;&gt; Finished validation on s_001456_GCAT_sample.txt
+2021-01-29 17:26:34,218 [INFO]: isatab.py(validate:4345) &gt;&gt; Loading... a_001456_GCAT.txt
+2021-01-29 17:26:34,226 [INFO]: isatab.py(validate:4353) &gt;&gt; Validating a_001456_GCAT.txt against assay table configuration (genome sequencing, nucleotide sequencing)...
+2021-01-29 17:26:34,226 [INFO]: isatab.py(validate:4359) &gt;&gt; Checking Factor Value presence...
+2021-01-29 17:26:34,227 [INFO]: isatab.py(validate:4363) &gt;&gt; Checking required fields...
+2021-01-29 17:26:34,227 [INFO]: isatab.py(validate:4366) &gt;&gt; Checking generic fields...
+2021-01-29 17:26:34,230 [INFO]: isatab.py(validate:4377) &gt;&gt; Checking unit fields...
+2021-01-29 17:26:34,231 [INFO]: isatab.py(validate:4387) &gt;&gt; Checking protocol fields...
+2021-01-29 17:26:34,232 [WARNING]: isatab.py(check_protocol_fields:4014) &gt;&gt; (W) Protocol(s) of type ['nucleic acid extraction'] defined in the ISA-configuration expected as a between 'Sample Name' and 'Extract Name' but has not been found, in the file 'a_001456_GCAT.txt'
+2021-01-29 17:26:34,233 [WARNING]: isatab.py(validate:4392) &gt;&gt; (W) There are some protocol inconsistencies in a_001456_GCAT.txt against ('genome sequencing', 'nucleotide sequencing') configuration
+2021-01-29 17:26:34,233 [INFO]: isatab.py(validate:4399) &gt;&gt; Checking ontology fields...
+2021-01-29 17:26:34,234 [INFO]: isatab.py(validate:4412) &gt;&gt; Checking study group size...
+2021-01-29 17:26:34,234 [INFO]: isatab.py(validate:4416) &gt;&gt; Finished validation on a_001456_GCAT.txt
+2021-01-29 17:26:34,235 [INFO]: isatab.py(validate:4422) &gt;&gt; Checking consistencies between study sample table and assay tables...
+2021-01-29 17:26:34,236 [INFO]: isatab.py(validate:4427) &gt;&gt; Finished checking study sample table against assay tables...
+2021-01-29 17:26:34,399 [INFO]: isatab.py(preprocess:5282) &gt;&gt; warning: Protocol REF missing between 'Normalization Name' and 'Data Transformation Name'
+2021-01-29 17:26:34,400 [INFO]: isatab.py(preprocess:5326) &gt;&gt; Inserting protocol unknown in between Normalization Name and Data Transformation Name
+2021-01-29 17:26:34,430 [INFO]: utils.py(detect_isatab_process_pooling:80) &gt;&gt; Checking s_001456_GCAT_sample.txt
+2021-01-29 17:26:34,431 [INFO]: isatab.py(validate:4440) &gt;&gt; Finished validation...
+</pre>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_json_report_bii_s_7</span> <span class="o">=</span> <span class="n">isatab</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;./BII-S-7/&#39;</span><span class="p">,</span> <span class="s1">&#39;i_matteo.txt&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">2021-01-29 17:26:34,446 [INFO]: isatab.py(validate:4202) &gt;&gt; Loading... ./BII-S-7/i_matteo.txt
+2021-01-29 17:26:34,565 [INFO]: isatab.py(validate:4204) &gt;&gt; Running prechecks...
+2021-01-29 17:26:34,676 [WARNING]: isatab.py(check_protocol_parameter_usage:2925) &gt;&gt; (W) Some protocol parameters declared in the investigation file are not used in any assay file: ['base caller']
+2021-01-29 17:26:34,677 [INFO]: isatab.py(validate:4225) &gt;&gt; Finished prechecks...
+2021-01-29 17:26:34,678 [INFO]: isatab.py(validate:4226) &gt;&gt; Loading configurations found in /Users/philippe/.pyenv/versions/3.8.0/envs/isa-api-py38/src/isatools/isatools/resources/config/xml
+2021-01-29 17:26:34,704 [INFO]: isatab.py(validate:4231) &gt;&gt; Using configurations found in /Users/philippe/.pyenv/versions/3.8.0/envs/isa-api-py38/src/isatools/isatools/resources/config/xml
+2021-01-29 17:26:34,705 [INFO]: isatab.py(validate:4233) &gt;&gt; Checking investigation file against configuration...
+2021-01-29 17:26:34,705 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Investigation Title of investigation file at column 1 is required
+2021-01-29 17:26:34,706 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Investigation Description of investigation file at column 1 is required
+2021-01-29 17:26:34,708 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Study Publication DOI of investigation file at column 1 is required
+2021-01-29 17:26:34,709 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Study Person Mid Initials of investigation file at column 1 is required
+2021-01-29 17:26:34,710 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Study Person Mid Initials of investigation file at column 2 is required
+2021-01-29 17:26:34,710 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Study Person Mid Initials of investigation file at column 3 is required
+2021-01-29 17:26:34,711 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Study Person Mid Initials of investigation file at column 4 is required
+2021-01-29 17:26:34,711 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Study Person Mid Initials of investigation file at column 5 is required
+2021-01-29 17:26:34,712 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Study Person Mid Initials of investigation file at column 6 is required
+2021-01-29 17:26:34,712 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Study Person Mid Initials of investigation file at column 7 is required
+2021-01-29 17:26:34,713 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Study Person Mid Initials of investigation file at column 8 is required
+2021-01-29 17:26:34,713 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Study Person Mid Initials of investigation file at column 9 is required
+2021-01-29 17:26:34,714 [WARNING]: isatab.py(check_section_against_required_fields_one_value:3359) &gt;&gt; (W) A property value in Study Person Mid Initials of investigation file at column 10 is required
+2021-01-29 17:26:34,714 [INFO]: isatab.py(validate:4236) &gt;&gt; Finished checking investigation file
+2021-01-29 17:26:34,715 [INFO]: isatab.py(validate:4255) &gt;&gt; Loading... s_BII-S-7.txt
+2021-01-29 17:26:34,727 [INFO]: isatab.py(validate:4261) &gt;&gt; Validating s_BII-S-7.txt against default study table configuration
+2021-01-29 17:26:34,728 [INFO]: isatab.py(validate:4263) &gt;&gt; Checking Factor Value presence...
+2021-01-29 17:26:34,738 [INFO]: isatab.py(validate:4266) &gt;&gt; Checking required fields...
+2021-01-29 17:26:34,739 [INFO]: isatab.py(validate:4269) &gt;&gt; Checking generic fields...
+2021-01-29 17:26:34,760 [INFO]: isatab.py(validate:4277) &gt;&gt; Checking unit fields...
+2021-01-29 17:26:34,760 [INFO]: isatab.py(validate:4284) &gt;&gt; Checking protocol fields...
+2021-01-29 17:26:34,762 [INFO]: isatab.py(validate:4294) &gt;&gt; Checking ontology fields...
+2021-01-29 17:26:34,776 [INFO]: isatab.py(validate:4304) &gt;&gt; Checking study group size...
+2021-01-29 17:26:34,779 [INFO]: isatab.py(validate:4308) &gt;&gt; Finished validation on s_BII-S-7.txt
+2021-01-29 17:26:34,780 [INFO]: isatab.py(validate:4345) &gt;&gt; Loading... a_matteo-assay-Gx.txt
+2021-01-29 17:26:34,788 [INFO]: isatab.py(validate:4353) &gt;&gt; Validating a_matteo-assay-Gx.txt against assay table configuration (environmental gene survey, nucleotide sequencing)...
+2021-01-29 17:26:34,789 [INFO]: isatab.py(validate:4359) &gt;&gt; Checking Factor Value presence...
+2021-01-29 17:26:34,789 [INFO]: isatab.py(validate:4363) &gt;&gt; Checking required fields...
+2021-01-29 17:26:34,790 [INFO]: isatab.py(validate:4366) &gt;&gt; Checking generic fields...
+2021-01-29 17:26:34,791 [WARNING]: isatab.py(check_single_field:3824) &gt;&gt; (W) Invalid value 'V6 and V5' for type 'list' of the field 'Parameter Value[target_subfragment]'
+2021-01-29 17:26:34,792 [WARNING]: isatab.py(check_single_field:3828) &gt;&gt; (W) Value must be one of: V6,V9,ITS
+2021-01-29 17:26:34,807 [WARNING]: isatab.py(validate:4370) &gt;&gt; (W) There are some field value inconsistencies in a_matteo-assay-Gx.txt against ('environmental gene survey', 'nucleotide sequencing') configuration
+2021-01-29 17:26:34,807 [INFO]: isatab.py(validate:4377) &gt;&gt; Checking unit fields...
+2021-01-29 17:26:34,808 [INFO]: isatab.py(validate:4387) &gt;&gt; Checking protocol fields...
+2021-01-29 17:26:34,810 [INFO]: isatab.py(validate:4399) &gt;&gt; Checking ontology fields...
+2021-01-29 17:26:34,811 [INFO]: isatab.py(validate:4412) &gt;&gt; Checking study group size...
+2021-01-29 17:26:34,811 [INFO]: isatab.py(validate:4416) &gt;&gt; Finished validation on a_matteo-assay-Gx.txt
+2021-01-29 17:26:34,812 [INFO]: isatab.py(validate:4422) &gt;&gt; Checking consistencies between study sample table and assay tables...
+2021-01-29 17:26:34,813 [INFO]: isatab.py(validate:4427) &gt;&gt; Finished checking study sample table against assay tables...
+2021-01-29 17:26:35,511 [INFO]: utils.py(detect_isatab_process_pooling:80) &gt;&gt; Checking s_BII-S-7.txt
+2021-01-29 17:26:35,690 [INFO]: utils.py(detect_isatab_process_pooling:89) &gt;&gt; Checking a_matteo-assay-Gx.txt
+2021-01-29 17:26:36,018 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,019 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,022 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,024 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,025 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,027 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,030 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,031 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,033 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,035 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,037 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,038 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,040 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">2021-01-29 17:26:36,043 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,046 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,048 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,050 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,052 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,053 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,058 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,060 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,063 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,065 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,068 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,070 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,072 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,074 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,076 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,079 [INFO]: utils.py(detect_graph_process_pooling:60) &gt;&gt; Possible process pooling detected on:  PCR amplification
+2021-01-29 17:26:36,116 [INFO]: isatab.py(validate:4440) &gt;&gt; Finished validation...
+</pre>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_json_report_bii_s_7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;errors&#39;: [],
+ &#39;warnings&#39;: [{&#39;message&#39;: &#39;A required property is missing&#39;,
+   &#39;supplemental&#39;: &#39;A property value in Investigation Title of investigation file at column 1 is required&#39;,
+   &#39;code&#39;: 4003},
+  {&#39;message&#39;: &#39;A required property is missing&#39;,
+   &#39;supplemental&#39;: &#39;A property value in Investigation Description of investigation file at column 1 is required&#39;,
+   &#39;code&#39;: 4003},
+  {&#39;message&#39;: &#39;A required property is missing&#39;,
+   &#39;supplemental&#39;: &#39;A property value in Study Publication DOI of investigation file at column 1 is required&#39;,
+   &#39;code&#39;: 4003},
+  {&#39;message&#39;: &#39;A required property is missing&#39;,
+   &#39;supplemental&#39;: &#39;A property value in Study Person Mid Initials of investigation file at column 1 is required&#39;,
+   &#39;code&#39;: 4003},
+  {&#39;message&#39;: &#39;A required property is missing&#39;,
+   &#39;supplemental&#39;: &#39;A property value in Study Person Mid Initials of investigation file at column 2 is required&#39;,
+   &#39;code&#39;: 4003},
+  {&#39;message&#39;: &#39;A required property is missing&#39;,
+   &#39;supplemental&#39;: &#39;A property value in Study Person Mid Initials of investigation file at column 3 is required&#39;,
+   &#39;code&#39;: 4003},
+  {&#39;message&#39;: &#39;A required property is missing&#39;,
+   &#39;supplemental&#39;: &#39;A property value in Study Person Mid Initials of investigation file at column 4 is required&#39;,
+   &#39;code&#39;: 4003},
+  {&#39;message&#39;: &#39;A required property is missing&#39;,
+   &#39;supplemental&#39;: &#39;A property value in Study Person Mid Initials of investigation file at column 5 is required&#39;,
+   &#39;code&#39;: 4003},
+  {&#39;message&#39;: &#39;A required property is missing&#39;,
+   &#39;supplemental&#39;: &#39;A property value in Study Person Mid Initials of investigation file at column 6 is required&#39;,
+   &#39;code&#39;: 4003},
+  {&#39;message&#39;: &#39;A required property is missing&#39;,
+   &#39;supplemental&#39;: &#39;A property value in Study Person Mid Initials of investigation file at column 7 is required&#39;,
+   &#39;code&#39;: 4003},
+  {&#39;message&#39;: &#39;A required property is missing&#39;,
+   &#39;supplemental&#39;: &#39;A property value in Study Person Mid Initials of investigation file at column 8 is required&#39;,
+   &#39;code&#39;: 4003},
+  {&#39;message&#39;: &#39;A required property is missing&#39;,
+   &#39;supplemental&#39;: &#39;A property value in Study Person Mid Initials of investigation file at column 9 is required&#39;,
+   &#39;code&#39;: 4003},
+  {&#39;message&#39;: &#39;A required property is missing&#39;,
+   &#39;supplemental&#39;: &#39;A property value in Study Person Mid Initials of investigation file at column 10 is required&#39;,
+   &#39;code&#39;: 4003},
+  {&#39;message&#39;: &#39;A value does not correspond to the correct data type&#39;,
+   &#39;supplemental&#39;: &quot;Invalid value &#39;V6 and V5&#39; for type &#39;list&#39; of the field &#39;Parameter Value[target_subfragment]&#39;&quot;,
+   &#39;code&#39;: 4011}],
+ &#39;info&#39;: [{&#39;message&#39;: &#39;Found 2 study groups in s_BII-S-7.txt&#39;,
+   &#39;supplemental&#39;: &#39;Found 2 study groups in s_BII-S-7.txt&#39;,
+   &#39;code&#39;: 5001},
+  {&#39;message&#39;: &#39;Found -1 study groups in a_matteo-assay-Gx.txt&#39;,
+   &#39;supplemental&#39;: &#39;Found -1 study groups in a_matteo-assay-Gx.txt&#39;,
+   &#39;code&#39;: 5001}],
+ &#39;validation_finished&#39;: True}
+</pre></div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The ISA Team<br/>
+        
+            &copy; Copyright 2021 (CC-BY 4.0).<br/>
+          <div class="extra_footer">
+            <script>mermaid.init();</script> <div class="row_footer"> This page was created thanks to work by <a href="https://github.com/jupyter/jupyter-book/graphs/contributors">The Jupyter Book Community</a></div> <div class="row_footer"> This project is supported financially by the <a href="https://wellcome.org/">Welcome Trust</a>, Elixir-UK and the European Union</div>
+<div class="row_footer"> <div class="column" style="center"><a href="https://wellcome.org/"><img src="../_static/images/logo/wellcome-logo-black.png" height="25" alt="Wellcome" style="float:center""></a></div> <div class="column"><a href="https://www.elixir-uk.org.eu/"><img src="../_static/images/logo/elixir-uk_transparent.png" height="40" alt="IMI logo" style="float:center""></a></div> <div class="column"><a href="https://https://ec.europa.eu/programmes/horizon2020/en"><img src="../_static/images/logo/eu-flag-recolored.png" height="25" alt="EFPIA logo" style="float:center""></a></div> </div>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>
