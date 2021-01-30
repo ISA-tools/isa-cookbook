@@ -1,0 +1,96 @@
+bokeh==1.2.0
+holoviews==1.12.3
+ipywidgets==7.4.2
+jupyter==1.0
+matplotlib==3.1.1
+numpy==1.16
+pandas==0.24.2
+python-dateutil==2.8.0
+pytz==2019.1
+-e git+http://github.com/ISA-tools/isa-api@1add99b5cc800c469073d3b902b1ffd31e1ba26b#egg=isatools
+#-e git+http://github.com/ISA-tools/isa-api@4bdc18395dae9c7cd50c1a661f8363f4bc5d308f#egg=isatools
+#-e git+http://github.com/ISA-tools/isa-api@7818462b08946c21c5b45f3dcea381e814953f6a#egg=isatools
+#-e git+http://github.com/ISA-tools/isa-api@5fd22532c62a29487e796fc4b1202f598e4c2b6a#egg=isatools
+#-e git+http://github.com/ISA-tools/isa-api@ee60fd53e61e0ecfa92f3a0a0954f6fd3032f832#egg=isatools
+#-e git+http://github.com/ISA-tools/isa-api@950574d03f76e4053de3ac994a8a20c91f64d0c6#egg=isatools
+#appnope==0.1.0
+#beautifulsoup4==4.6.0
+#biopython==1.70
+#bleach==2.0.0
+#bs4==0.0.1
+#bokeh
+##certifi==2017.7.27.1
+#chardet==3.0.4
+#datetime
+#decorator==4.1.2
+#deepdiff==3.3.0
+#entrypoints==0.2.3
+#et-xmlfile==1.0.1
+#html5lib==0.999999999
+#idna==2.6
+#ipykernel
+#ipython==6.1.0
+#ipython-genutils==0.2.0
+#ipywidgets==7.4.2
+#-e git+http://github.com/ISA-tools/isa-api@d8c2da43f2787ce6b6456d007efbd65dbe0df131#egg=isatools
+#-e git+http://github.com/ISA-tools/isa-api@4ca7811900706cff02d4d3c9f7fef9dc05cbc818#egg=isatools
+#-e git+http://github.com/ISA-tools/isa-api@aeae0b2d5f36b2af1aadab2d65de2dc71a0bc8b6#egg=isatools
+#-e git+http://github.com/ISA-tools/isa-api@e94ef7d1f4381acaf30cccafb762b17048bd6ca2#egg=isatools
+#-e git+http://github.com/ISA-tools/isa-api@29ad32830c8fc54ad5b367584179464a80d6bc60#egg=isatools
+#-e git+http://github.com/ISA-tools/isa-api@4a2d04820d90da086ed2684b42df0aaa073591b6#egg=isatools
+#-e git+http://github.com/ISA-tools/isa-api@b3ac17ee03a1d9c76aaec0e19eda67e906f44006#egg=isatools
+#-e git+http://github.com/ISA-tools/isa-api@d431c35ffadd1dc1d9079e57253ebcbe5c217d2e#egg=isatools
+#-e git+http://github.com/ISA-tools/isa-api@f107f7d7858b0c912275ec5641fbfdd76d000a4b#egg=isatools
+#-e git+http://github.com/ISA-tools/isa-api@1e4d6bcae667b6fc6edbe2b7aed20e974acc55f6#egg=isatools
+#-e git+http://github.com/ISA-tools/isa-api@54d9506a19909b9a736101fa0d2b0b119d2c6415#egg=isatools
+#isatools==0.10.3
+#iso8601==0.1.12
+#jdcal==1.3
+#jedi==0.10.2
+#Jinja2==2.9.6
+#jsonpickle==0.9.5
+#jsonschema==2.6.0
+#jupyter-client>=5.2.3
+#jupyter-contrib-core==0.3.1
+#jupyter_core>=4.4.0
+#jupyter-dashboards==0.7.0
+#jupyter-nbextensions-configurator==0.2.5
+#jupyter_contrib_nbextensions
+#jupyter==1.0
+##lxml==4.0.0
+#MarkupSafe==1.0
+#matplotlib
+#mistune==0.7.4
+#mzml2isa==0.5.1
+#nbconvert==5.2.1
+#nbextensions==0.0.6
+#nbformat==4.3.0
+#networkx==2.0
+#notebook>=5.4.1
+#numpy==1.16
+#openpyxl==2.4.8
+#pandas==0.24.2
+#pandocfilters==1.4.1
+#pexpect==4.2.1
+#pickleshare==0.7.4
+#progressbar2==3.34.3
+#prompt-toolkit==1.0.15
+#pronto==0.8.0
+#Pygments==2.2.0
+#python-dateutil==2.8.0
+#python-utils==2.2.0
+#pytz==2019.1
+##PyYAML==3.12
+#pyzmq>=17
+#qgrid==0.3.3
+#requests>=2.20.0
+#simplegeneric==0.8.1
+#six==1.11.0
+#terminado>=0.8.1
+#testpath==0.3.1
+#tornado
+#traitlets==4.3.2
+#urllib3==1.22
+#wcwidth==0.1.7
+#webencodings==0.5.1
+#widgetsnbextension>=3.4.0

@@ -1,0 +1,23 @@
+- file: content/index
+
+- file: content/installation
+- file: content/isamodel
+- file: content/reading
+- file: content/creation
+- file: content/creation_tutorial
+- file: content/validation
+- file: content/conversions
+- file: content/importdata
+- file: content/exportdata
+- file: content/examples
+- file: content/github
+- file: content/knownissues
+- file: content/notebooks
+  sections:
+    - file: content/notebooks/isa-create-sample-assay-plan-htp-imaging.ipynb
+    - file: content/notebooks/isa-create-sample-assay-plan-lc-dad.ipynb
+    - file: content/notebooks/isa-protocol-type-synonym-effect-on-assay-table.ipynb
+
+- file: content/notebooks/isa-create-sample-assay-plan-htp-imaging.ipynb
+- file: content/notebooks/isa-create-sample-assay-plan-lc-dad.ipynb
+- file: content/notebooks/isa-protocol-type-synonym-effect-on-assay-table.ipynb
